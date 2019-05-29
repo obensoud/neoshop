@@ -35,10 +35,8 @@ if($_POST) {
 			if($mainResult->num_rows == 1) {
 				$value = $mainResult->fetch_assoc();
 				$user_id = $value['user_id'];
-
 				// set session
 				$_SESSION['userId'] = $user_id;
-				error_log("@@User Id".$_SESSION['userId'] );
 				header('location: dashboard.php');	
 			} else{
 				
