@@ -1,10 +1,10 @@
 <?php 	
 
-$host = 'ec2-54-246-121-32.eu-west-1.compute.amazonaws.com';
-$port = 5432;
-$username = "mokpbeftzvdfvj";
-$password = "2109ff14725e43d77daf4a056fcfe7010c80984e391af2d15f9d1bb03cac80f2";
-$dbname = "d65rlbivfarv6a";
+$host = 'eu-cdbr-west-02.cleardb.net';
+$port = 3306;
+$username = "b4aaec588befa0";
+$password = "c6622a34";
+$dbname = "heroku_c308925211e9a24";
   
   $connect = new mysqli($host, $username, $password, $dbname, $port);
 //$connect = new mysqli($host, $username, $password, $dbname);
