@@ -27,11 +27,11 @@ $sql2 = "INSERT INTO orders (order_date, client_name, client_contact, sub_total,
 
 $order_id;
 $orderStatus = false;
-	if($connect->query($sql2) === true) {
-		$order_id = $connect->insert_id;
-		$valid['order_id'] = $order_id;	
-		$orderStatus = true;
-	}
+if($connect->query($sql2) === true) {
+	$order_id = $connect->insert_id;
+	$valid['order_id'] = $order_id;	
+	$orderStatus = true;
+}
 $orderItemStatus = false;
 for($x = 0; $x < $NemberOfRow-1; $x++) {	
   	$temp1 =  $myJSONProdactName[$x];

@@ -14,6 +14,7 @@
     $sessionId =session_id();
     // pseudo
     $user_id = $_SESSION['userId'];
+    error_log("hello, this is a test!");
     $sql = "SELECT * FROM users WHERE user_id = {$user_id}";
     $query = $connect->query($sql);
     $result = $query->fetch_assoc();
