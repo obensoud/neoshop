@@ -37,6 +37,10 @@ if($_POST) {
 				$user_id = $value['user_id'];
 				// set session
 				$_SESSION['userId'] = $user_id;
+<<<<<<< HEAD
+=======
+				$_SESSION['username'] = $username;
+>>>>>>> 55935740ccb1cd3be204d3a876ba6d7f59491e1a
 				header('location: dashboard.php');	
 			} else{
 				
