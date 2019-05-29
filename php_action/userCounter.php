@@ -13,7 +13,7 @@
     // session du client
     $sessionId =session_id();
     // pseudo
-    $user_id = 7;
+    $user_id = $_SESSION['userId'];
     error_log("@@User Id: ".$_SESSION['userId'] );
     $sql = "SELECT * FROM users WHERE user_id = {$user_id}";
     $query = $connect->query($sql);
