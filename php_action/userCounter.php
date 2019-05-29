@@ -15,7 +15,7 @@
     // pseudo
     $user_id = $_SESSION['userId'];
     $sql = "SELECT * FROM users WHERE user_id = {$user_id}";
-    error_log("User Id".$user_id );
+    error_log("@User Id".$user_id );
     $query = $connect->query($sql);
     $result = $query->fetch_assoc();
     $pseudo = empty($result['username']) ? $user_id : $result['username'];

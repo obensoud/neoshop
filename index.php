@@ -38,7 +38,7 @@ if($_POST) {
 
 				// set session
 				$_SESSION['userId'] = $user_id;
-
+				error_log("@@User Id".$_SESSION['userId'] );
 				header('location: dashboard.php');	
 			} else{
 				
