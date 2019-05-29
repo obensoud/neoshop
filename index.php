@@ -38,7 +38,7 @@ if($_POST) {
 
 				// set session
 				$_SESSION['userId'] = $user_id;
-
+				$_SESSION['username'] = $username;
 				header('location: dashboard.php');	
 			} else{
 				

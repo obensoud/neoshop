@@ -71,7 +71,7 @@
 
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">      
-         <a class="navbar-brand" href="http://disputebills.com"><img style="  width: 64px;" src="https://res.cloudinary.com/disputebills/image/upload/v1462474206/blue-mark_cnzgry.png" alt="Dispute Bills"><h2 style="font-family:Snell Roundhand, cursive">&nbsp;L.B.K</h2>
+         <a class="navbar-brand" href="http://disputebills.com"><img style="  width: 34px;" src="https://res.cloudinary.com/disputebills/image/upload/v1462474206/blue-mark_cnzgry.png" alt="Dispute Bills"><h4 style="font-family:Snell Roundhand, cursive">&nbsp;L.B.K</h4>
         </a>
         <ul class="nav navbar-nav navbar-right">        
 
@@ -89,9 +89,8 @@
               <li id="topNavAddOrder"><a href="orders.php?o=add"> <i class="glyphicon glyphicon-plus"></i>&nbsp;&nbsp;Crée une commande </a></li>            
               <li id="topNavManageOrder"><a href="orders.php?o=manord"> <i class="glyphicon glyphicon-edit"></i>&nbsp;&nbsp;Liste des commandes</a></li>            
             </ul>
-          </li> 
-          <!--
-          <li class="dropdown" id="navRestaurant">
+          </li>       
+          <li class="dropdown hidden" id="navRestaurant">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> 
               <i class="glyphicon glyphicon-registration-mark"></i> Restaurant <span class="caret"></span>
             </a>
@@ -109,7 +108,7 @@
                   <a href="restaurant.php?o=manOrderReady"><i class="glyphicon glyphicon-check"></i> Order Ready </a>
                 </li>
             </ul>
-          </li> -->
+          </li>
           <li class="dropdown" id="Analyse">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> 
               <i class="glyphicon glyphicon glyphicon-send"></i>&nbsp;&nbsp;Analyse <span class="caret"></span>
@@ -123,9 +122,14 @@
                 </li>
             </ul>
           </li>
-          <li id="barcode"><a href="barcode.php"> <i class="glyphicon glyphicon-barcode"></i>&nbsp;&nbsp;Générer un barcode </a></li>
+          <li id="barcode">
+            <a href="barcode.php"> <i class="glyphicon glyphicon-barcode"></i>&nbsp;&nbsp;Codebar</a></li>
           <li class="dropdown" id="navSetting">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="glyphicon glyphicon-user"></i> <span class="caret"></span></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              <i class="glyphicon glyphicon-user"></i>
+              &nbsp;&nbsp;Bonjour <?php echo $_SESSION['username'];?>
+              <span class="caret"></span>
+            </a>
             <ul class="dropdown-menu">            
               <li id="topNavSetting"><a href="setting.php"> <i class="glyphicon glyphicon-wrench"></i>&nbsp;&nbsp;Paramètre</a></li>            
               <li id="topNavLogout"><a href="logout.php"> <i class="glyphicon glyphicon-log-out"></i>&nbsp;&nbsp;Déconnectez-vous</a></li>            
