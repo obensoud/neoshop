@@ -109,7 +109,7 @@
                 </li>
             </ul>
           </li>
-          <li class="dropdown" id="Analyse">
+          <li class="dropdown " id="Analyse">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> 
               <i class="glyphicon glyphicon glyphicon-send"></i>&nbsp;&nbsp;Analyse <span class="caret"></span>
             </a>
