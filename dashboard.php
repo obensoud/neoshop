@@ -83,7 +83,7 @@
 				<div class="cardContainer">
 					<p><?php 
 						$date1 = date('Y-m-d'); // Date du jour
-						setlocale(LC_TIME, 'fr_FR.utf8','fra');
+						setlocale(LC_TIME, "fr_FR");
 						echo strftime("%A %d %B %G", strtotime($date1));
 						 ?></p>
 				</div>
