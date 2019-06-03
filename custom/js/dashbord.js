@@ -134,6 +134,11 @@ function imprimer_bloc(titre, objet) {
   var d = new Date();
   var FullTime =days[d.getDay()]+" "+d.getDate()+" "+d.getFullYear()+" "+ d.getHours()+":"+d.getMinutes()+":"+ d.getSeconds();
   // Définition de la zone à imprimer
+  var rows = document.getElementById('tableReceipt').getElementsByTagName("tr").length-2;
+  for(i=1;i<=rows;i++){
+    document.getElementById("number"+i).defaultValue = document.getElementById("number"+i).value;
+    document.getElementById("number"+i).style.border = "none";
+  }
   var zone = document.getElementById(objet).innerHTML;
   var hRecipt = "<H1> Bienvenue à la librairie  </H1>";
   var hRecipt2 ="<H1> ------Bensouda-----</H1> <br />" ;

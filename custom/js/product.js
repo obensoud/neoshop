@@ -50,7 +50,7 @@ $(document).ready(function() {
 			var categoryName = $("#categoryName").val();
 			var productStatus = $("#productStatus").val();
 	
-			if(productImage == "") {
+			/*if(productImage == "") {
 				//$("#productImage").after('<p class="text-danger">L image est obligatoire</p>');
 				$('#productImage').closest('.form-group').addClass('has-error');
 			}	else {
@@ -58,8 +58,10 @@ $(document).ready(function() {
 				$("#productImage").find('.text-danger').remove();
 				// success out for form 
 				$("#productImage").closest('.form-group').addClass('has-success');	  	
-			}	
-
+			}	*/
+			if(productImage == "") {
+				productImage = "";
+			}
 			if(productName == "") {
 				$("#productName").after('<p class="text-danger">Product Name field is required</p>');
 				$('#productName').closest('.form-group').addClass('has-error');
@@ -140,7 +142,7 @@ $(document).ready(function() {
 				$("#productStatus").closest('.form-group').addClass('has-success');	  	
 			}	// /else
 
-			if( productImage && productName && barCode && quantity && prixdeVente && prixdAchat && brandName && categoryName && productStatus) {
+			if( productName && barCode && quantity && prixdeVente && prixdAchat && brandName && categoryName && productStatus) {
 				// submit loading button
 				$("#createProductBtn").button('loading');
 
@@ -156,7 +158,7 @@ $(document).ready(function() {
 					contentType: false,
 					processData: false,
 					success:function(response) {
-
+						console.log("success "+JSON.stringify(response));
 						if(response.success == true) {
 							// submit loading button
 							$("#createProductBtn").button('reset');
@@ -167,18 +169,18 @@ $(document).ready(function() {
 																	
 							// shows a successful message after operation
 							$('#add-product-messages').html('<div class="alert alert-success">'+
-		            '<button type="button" class="close" data-dismiss="alert">&times;</button>'+
-		            '<strong><i class="glyphicon glyphicon-ok-sign"></i></strong> '+ response.messages +
-		          '</div>');
+				            '<button type="button" class="close" data-dismiss="alert">&times;</button>'+
+				            '<strong><i class="glyphicon glyphicon-ok-sign"></i></strong> '+ response.messages +
+				          	'</div>');
 
 							// remove the mesages
-		          $(".alert-success").delay(500).show(10, function() {
+		          			$(".alert-success").delay(500).show(10, function() {
 								$(this).delay(3000).hide(10, function() {
 									$(this).remove();
 								});
 							}); // /.alert
 
-		          // reload the manage student table
+		          			// reload the manage student table
 							manageProductTable.ajax.reload(null, true);
 
 							// remove text-error 
@@ -187,15 +189,38 @@ $(document).ready(function() {
 							$(".form-group").removeClass('has-error').removeClass('has-success');
 
 						} // /if response.success
-						
-					} // /success function
+					}, // /success function
+					error: function (request, error) {
+				        console.log(" Can't do it because: " + JSON.stringify(error));
+				        console.log("request "+JSON.stringify(request));
+				        $("#createProductBtn").button('reset');
+						$("#submitProductForm")[0].reset();
+						$("html, body, div.modal, div.modal-content, div.modal-body").animate({scrollTop: '0'}, 100);										
+						// shows a successful message after operation
+						$('#add-product-messages').html('<div class="alert alert-success">'+
+			            '<button type="button" class="close" data-dismiss="alert">&times;</button>'+
+			            '<strong><i class="glyphicon glyphicon-ok-sign"></i></strong> '+ 'Successfully' + 
+			          	'</div>');
+						// remove the mesages
+	          			$(".alert-success").delay(500).show(10, function() {
+							$(this).delay(3000).hide(10, function() {
+								$(this).remove();
+							});
+						}); // /.alert
+	          			// reload the manage student table
+						manageProductTable.ajax.reload(null, true);
+						// remove text-error 
+						$(".text-danger").remove();
+						// remove from-group error
+						$(".form-group").removeClass('has-error').removeClass('has-success');
+				    }
 				}); // /ajax function
 			}	 // /if validation is ok 					
 
 			return false;
 		}); // /submit product form
 
-	}); // /add product modal btn clicked
+	}); // /add product modal btn clicked 
 	
 
 	// remove product 	
@@ -561,33 +586,3 @@ function removeProduct(productId = null) {
 		}); // /remove product btn clicked
 	} // /if productid
 } // /remove product function
-
-function clearForm(oForm) {
-	// var frm_elements = oForm.elements;									
-	// console.log(frm_elements);
-	// 	for(i=0;i<frm_elements.length;i++) {
-	// 		field_type = frm_elements[i].type.toLowerCase();									
-	// 		switch (field_type) {
-	// 	    case "text":
-	// 	    case "password":
-	// 	    case "textarea":
-	// 	    case "hidden":
-	// 	    case "select-one":	    
-	// 	      frm_elements[i].value = "";
-	// 	      break;
-	// 	    case "radio":
-	// 	    case "checkbox":	    
-	// 	      if (frm_elements[i].checked)
-	// 	      {
-	// 	          frm_elements[i].checked = false;
-	// 	      }
-	// 	      break;
-	// 	    case "file": 
-	// 	    	if(frm_elements[i].options) {
-	// 	    		frm_elements[i].options= false;
-	// 	    	}
-	// 	    default:
-	// 	        break;
-	//     } // /switch
-	// 	} // for
-}
