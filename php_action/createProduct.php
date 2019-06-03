@@ -15,31 +15,39 @@ if($_POST) {
   $brandName 		= $_POST['brandName'];
   $categoryName 	= $_POST['categoryName'];
   $productStatus 	= $_POST['productStatus'];
+  	if($productImage  == null || $productImage  == ''){			
+		$sql = "INSERT INTO product (product_name, brand_id, categories_id, quantity, salePrice, barcode, active, prix_achat,status) 
+		VALUES ('$productName', '$brandName', '$categoryName', '$quantity', '$prixdeVente', '$barcode' ,'$productStatus', '$prixdAchat',1)";
 
-	$type = explode('.', $_FILES['productImage']['name']);
-	$type = $type[count($type)-1];		
-	$url = '../assests/images/stock/'.uniqid(rand()).'.'.$type;
-	if(in_array($type, array('gif', 'jpg', 'jpeg', 'png', 'JPG', 'GIF', 'JPEG', 'PNG'))) {
-  		if(is_uploaded_file($_FILES['productImage']['tmp_name'])) {			
-  			if(move_uploaded_file($_FILES['productImage']['tmp_name'], $url)) {
-  				if(strcmp($Password,$ConfirmYourPassword) == 0) {				
-					$sql = "INSERT INTO product (product_name, product_image, brand_id, categories_id, quantity, salePrice, barcode, active, prix_achat,status) 
-					VALUES ('$productName', '$url', '$brandName', '$categoryName', '$quantity', '$prixdeVente', '$barcode' ,'$productStatus', '$prixdAchat',1)";
+		if($connect->query($sql) === TRUE) {
+			$valid['success'] = true;
+			$valid['messages'] = "Successfully Added";	
+		} else {
+			$valid['success'] = false;
+			$valid['messages'] = "Error while adding the members";
+		}
+  	}else{
+  		$type = explode('.', $_FILES['productImage']['name']);
+		$type = $type[count($type)-1];		
+		$url = '../assests/images/stock/'.uniqid(rand()).'.'.$type;
+		if(in_array($type, array('gif', 'jpg', 'jpeg', 'png', 'JPG', 'GIF', 'JPEG', 'PNG'))) {
+	  		if(is_uploaded_file($_FILES['productImage']['tmp_name'])) {			
+	  			if(move_uploaded_file($_FILES['productImage']['tmp_name'], $url)) {				
+						$sql = "INSERT INTO product (product_name, product_image, brand_id, categories_id, quantity, salePrice, barcode, active, prix_achat,status) 
+						VALUES ('$productName', '$url', '$brandName', '$categoryName', '$quantity', '$prixdeVente', '$barcode' ,'$productStatus', '$prixdAchat',1)";
 
-					if($connect->query($sql) === TRUE) {
-						$valid['success'] = true;
-						$valid['messages'] = "Successfully Added";	
-					} else {
-						$valid['success'] = false;
-						$valid['messages'] = "Error while adding the members";
-					}
-				}else {
-  					return false;
-				}	// /else	
-			} // if
-		} // if in_array 
-	}				
-
+						if($connect->query($sql) === TRUE) {
+							$valid['success'] = true;
+							$valid['messages'] = "Successfully Added";	
+						} else {
+							$valid['success'] = false;
+							$valid['messages'] = "Error while adding the members";
+						}
+				} // if
+			} // if in_array 
+		}			
+  	}
+	
 	$connect->close();
 
 	echo json_encode($valid);
