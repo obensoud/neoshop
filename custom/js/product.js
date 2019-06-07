@@ -188,6 +188,35 @@ $(document).ready(function() {
 							// remove from-group error
 							$(".form-group").removeClass('has-error').removeClass('has-success');
 
+						} else {
+							// submit loading button
+							$("#createProductBtn").button('reset');
+							
+							$("#submitProductForm")[0].reset();
+
+							$("html, body, div.modal, div.modal-content, div.modal-body").animate({scrollTop: '0'}, 100);
+																	
+							// shows a successful message after operation
+							$('#add-product-messages').html('<div class="alert alert-danger">'+
+				            '<button type="button" class="close" data-dismiss="alert">&times;</button>'+
+				            '<strong><i class="glyphicon glyphicon-ok-sign"></i></strong> '+ response.messages +
+				          	'</div>');
+
+							// remove the mesages
+		          			$(".alert-success").delay(500).show(10, function() {
+								$(this).delay(3000).hide(10, function() {
+									$(this).remove();
+								});
+							}); // /.alert
+
+		          			// reload the manage student table
+							manageProductTable.ajax.reload(null, true);
+
+							// remove text-error 
+							$(".text-danger").remove();
+							// remove from-group error
+							$(".form-group").removeClass('has-error').removeClass('has-success');
+
 						} // /if response.success
 					}, // /success function
 					error: function (request, error) {
@@ -199,7 +228,7 @@ $(document).ready(function() {
 						// shows a successful message after operation
 						$('#add-product-messages').html('<div class="alert alert-success">'+
 			            '<button type="button" class="close" data-dismiss="alert">&times;</button>'+
-			            '<strong><i class="glyphicon glyphicon-ok-sign"></i></strong> '+ 'Successfully' + 
+			            '<strong><i class="glyphicon glyphicon-ok-sign"></i></strong> '+ 'Success fully' + 
 			          	'</div>');
 						// remove the mesages
 	          			$(".alert-success").delay(500).show(10, function() {

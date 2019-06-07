@@ -41,7 +41,7 @@ if($_POST) {
 							$valid['messages'] = "Successfully Added";	
 						} else {
 							$valid['success'] = false;
-							$valid['messages'] = "Error while adding the members";
+							$valid['messages'] = "Le code bar existe deja";
 						}
 				} // if
 			} // if in_array 
