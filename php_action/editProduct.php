@@ -9,14 +9,14 @@ if($_POST) {
 	$productName 		= $_POST['editProductName']; 
 	$barCode 			= $_POST['editbarCode']; 
 	$quantity 			= $_POST['editQuantity'];
-	$salePrice 			= $_POST['editPrixDAchat'];
+	$prixDAchat 		= $_POST['editPrixDAchat'];
 	$prixDeVente 		= $_POST['editPrixDeVente'];
 	$brandName 			= $_POST['editBrandName'];
 	$categoryName 		= $_POST['editCategoryName'];
 	$productStatus 		= $_POST['editProductStatus'];
 
 				
-	$sql = "UPDATE product SET product_name = '$productName',barcode = '$barCode', brand_id = '$brandName', categories_id = '$categoryName', quantity = '$quantity', prix_achat= '$prixDeVente',salePrice = '$salePrice', active = '$productStatus', status = 1 WHERE product_id = $productId ";
+	$sql = "UPDATE product SET product_name = '$productName',barcode = '$barCode', brand_id = '$brandName', categories_id = '$categoryName', quantity = '$quantity', prix_achat= '$prixDAchat',salePrice = '$prixDeVente', active = '$productStatus', status = 1 WHERE product_id = $productId ";
 
 	if($connect->query($sql) === TRUE) {
 		$valid['success'] = true;
