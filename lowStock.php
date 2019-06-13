@@ -29,7 +29,7 @@
 							<th>Code barre</th>
 							<th>Pourcentage</th>							
 							<th>Quantité</th>
-							<th>Marque</th>
+							<th><?php echo tr("Brand")?></th>
 							<th>Catégorie</th>
 							<th>Statut</th>
 							<th style="width:15%;">Options</th>
@@ -103,7 +103,7 @@
 	        </div> <!-- /form-group-->	     	        
 
 	        <div class="form-group">
-	        	<label for="brandName" class="col-sm-3 control-label">Marque: </label>
+	        	<label for="brandName" class="col-sm-3 control-label"><?php echo tr("Brand")?>: </label>
 	        	<label class="col-sm-1 control-label">: </label>
 				    <div class="col-sm-8">
 				      <select class="form-control" id="brandName" name="brandName">
@@ -269,7 +269,7 @@
 			        </div> <!-- /form-group-->	     	        
 
 			        <div class="form-group">
-			        	<label for="editBrandName" class="col-sm-3 control-label">Marque: </label>
+			        	<label for="editBrandName" class="col-sm-3 control-label"><?php echo tr("Brand")?>: </label>
 			        	<label class="col-sm-1 control-label">: </label>
 						    <div class="col-sm-8">
 						      <select class="form-control" id="editBrandName" name="editBrandName">

@@ -15,7 +15,7 @@ if($_GET['o'] == 'add') {
 ?>
 
 <ol class="breadcrumb">
-  <li><a href="dashboard.php">Accueil</a></li>
+  <li><a href="dashboard.php"><?php echo tr("Home")?></a></li>
   <li>Commande</li>
   <li class="active">
   	<?php if($_GET['o'] == 'add') { ?>

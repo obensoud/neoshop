@@ -11,5 +11,6 @@
 	<!-- DataTables -->
 	<script src="assests/plugins/datatables/jquery.dataTables.min.js"></script>
 	<?php require_once 'php_action/tchat.php'; ?>
+	<?php require_once 'php_action/language.php'; ?>
 </body>
 </html>

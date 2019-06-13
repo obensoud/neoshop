@@ -5,7 +5,7 @@
 	<div class="col-md-12">
 
 		<ol class="breadcrumb">
-		  <li><a href="dashboard.php">Accueil</a></li>		  
+		  <li><a href="dashboard.php"><?php echo tr("Home")?></a></li>		  
 		  <li class="active">Produit</li>
 		</ol>
 
@@ -29,7 +29,7 @@
 							<th>Codebar</th>
 							<th>Prix</th>							
 							<th>Quantité</th>
-							<th>Marque</th>
+							<th><?php echo tr("Brand")?></th>
 							<th>Catégorie</th>
 							<th>Statut</th>
 							<th style="width:15%;">Options</th>
@@ -111,7 +111,7 @@
 	         <!-- /form-group-->	     	        
 
 	        <div class="form-group">
-	        	<label for="brandName" class="col-sm-3 control-label">Nom de la marque: </label>
+	        	<label for="brandName" class="col-sm-3 control-label">Nom de la <?php echo tr("Brand")?>: </label>
 	        	<label class="col-sm-1 control-label">: </label>
 				    <div class="col-sm-8">
 				      <select class="form-control" id="brandName" name="brandName">
@@ -283,7 +283,7 @@
 			        </div> <!-- /form-group-->	     	        
 
 			        <div class="form-group">
-			        	<label for="editBrandName" class="col-sm-3 control-label">Marque: </label>
+			        	<label for="editBrandName" class="col-sm-3 control-label"><?php echo tr("Brand")?>: </label>
 			        	<label class="col-sm-1 control-label">: </label>
 						    <div class="col-sm-8">
 						      <select class="form-control" id="editBrandName" name="editBrandName">

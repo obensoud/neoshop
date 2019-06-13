@@ -1,5 +1,6 @@
 <?php 
 require_once 'php_action/db_connect.php';
+require_once 'php_action/localisation.php';
 
 session_start();
 
@@ -82,7 +83,7 @@ if($_POST) {
 			<div class="col-md-5 col-md-offset-4">
 				<div class="panel panel-info">
 					<div class="panel-heading">
-						<h3 class="panel-title">Please Sign in</h3>
+						<h3 class="panel-title"><?php echo tr("Please Sign in");?></h3>
 					</div>
 					<div class="panel-body">
 
@@ -99,20 +100,20 @@ if($_POST) {
 						<form class="form-horizontal" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post" id="loginForm">
 							<fieldset>
 							  <div class="form-group">
-									<label for="username" class="col-sm-2 control-label">Username</label>
+									<label for="username" class="col-sm-2 control-label"><?php echo tr("Username")?></label>
 									<div class="col-sm-10">
 									  <input type="text" class="form-control" id="username" name="username" placeholder="Username" autocomplete="off" />
 									</div>
 								</div>
 								<div class="form-group">
-									<label for="password" class="col-sm-2 control-label">Password</label>
+									<label for="password" class="col-sm-2 control-label"><?php echo tr("Password")?></label>
 									<div class="col-sm-10">
 									  <input type="password" class="form-control" id="password" name="password" placeholder="Password" autocomplete="off" />
 									</div>
 								</div>								
 								<div class="form-group">
 									<div class="col-sm-offset-2 col-sm-10">
-									  <button type="submit" class="btn btn-default"> <i class="glyphicon glyphicon-log-in"></i> Sign in</button>
+									  <button type="submit" class="btn btn-default"> <i class="glyphicon glyphicon-log-in"></i><?php echo tr("Sign in")?></button>
 									</div>
 								</div>
 							</fieldset>

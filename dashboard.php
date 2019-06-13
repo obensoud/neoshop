@@ -1,6 +1,6 @@
-	<?php require_once 'includes/header.php'; ?>
-
 	<?php 
+	require_once 'includes/header.php'; 
+
 
 	$sql = "SELECT * FROM product WHERE status = 1";
 	$query = $connect->query($sql);
@@ -42,7 +42,7 @@
 				<div class="panel-heading">
 					
 					<a href="product.php" style="text-decoration:none;color:black;">
-						Totale des produits
+						<?php echo tr("Total products")?>
 						<span class="badge pull pull-right"><?php echo $countProduct; ?></span>	
 					</a>
 					
@@ -54,7 +54,7 @@
 			<div class="panel panel-info">
 				<div class="panel-heading">
 					<a href="orders.php?o=manord" style="text-decoration:none;color:black;">
-						Totale des Commandes
+						<?php echo tr("Total Orders")?>
 						<span class="badge pull pull-right"><?php echo $countOrder; ?></span>
 					</a>
 
@@ -66,7 +66,7 @@
 			<div class="panel panel-danger">
 				<div class="panel-heading">
 					<a href="lowStock.php" style="text-decoration:none;color:black;">
-						Nombre d'extinction de produit
+						<?php echo tr("Number of product extinction")?>
 						<span class="badge pull pull-right"><?php echo $countLowStock; ?></span>	
 					</a>
 					
@@ -100,7 +100,7 @@
 				</div>
 
 				<div class="cardContainer">
-					<p> Totale des revenue en DH</p>
+					<p> <?php echo tr("Total income in "); tr("$")?></p>
 				</div>
 			</div>
 		</div>
@@ -110,20 +110,20 @@
 				<div class="panel panel-default">
 					<div class="panel-heading "> 
 						<div class="changeButton">
-							<button style="float: right;" class="btn btn-danger" type="button" onclick="removeProductAllRow()"><i class="glyphicon glyphicon-trash" style="color:white"> </i>  Supprimer le ticket</button>
+							<button style="float: right;" class="btn btn-danger" type="button" onclick="removeProductAllRow()"><i class="glyphicon glyphicon-trash" style="color:white"> </i>  <?php echo tr("Delete ticket")?></button>
 							<div style="float: right;">
 								&nbsp;
 							</div> 
-							<button style="float: right;" class="btn btn-success" type="button"  onclick="saveChange()"><i class="glyphicon glyphicon-ok-sign" style="color:white"> </i> Sauvgarder le ticket</button> 
+							<button style="float: right;" class="btn btn-success" type="button"  onclick="saveChange()"><i class="glyphicon glyphicon-ok-sign" style="color:white"> </i> <?php echo tr("Save the ticket")?></button> 
 						</div>
 						<div class="changeButton2 hidden">
-							<button style="float: right;" class="btn btn-default" type="button" onclick="newReciept()"><i class="glyphicon glyphicon-plus" > </i>  Nouvelle ticket</button>
+							<button style="float: right;" class="btn btn-default" type="button" onclick="newReciept()"><i class="glyphicon glyphicon-plus" > </i><?php echo tr("New ticket")?></button>
 							<div style="float: right;">
 								&nbsp;
 							</div> 
-							<button style="float: right;" class="btn btn-primary" type="button"  onclick="printReceipt()"><i class="glyphicon glyphicon-print" style="color:white"> </i> Imprimer</button> 
+							<button style="float: right;" class="btn btn-primary" type="button"  onclick="printReceipt()"><i class="glyphicon glyphicon-print" style="color:white"> </i><?php echo tr("Print")?></button> 
 						</div>
-						<h4><i class="glyphicon glyphicon-shopping-cart" style="font-size: 20px;"></i> Créer un ticket </h4>
+						<h4><i class="glyphicon glyphicon-shopping-cart" style="font-size: 20px;"></i><?php echo tr("Create a ticket")?></h4>
 					</div>
 					<div class="panel-body">
 						<input type="text" class="form-control" id="barcodeScanner" placeholder="Barcode scanner">
@@ -132,10 +132,10 @@
 							<table class="table table-condensed" id="tableReceipt"> 
 								<thead> 
 									<tr> 
-										<th>Nom du produit</th>
-										<th>Quantité</th>
-										<th>P.U</th> 
-										<th>Total</th>
+										<th><?php echo tr("Product Name")?></th>
+										<th><?php echo tr("Quantity")?></th>
+										<th><?php echo tr("U.P")?></th> 
+										<th><?php echo tr("Total")?></th>
 										<th></th> 
 									</tr> 
 								</thead> 
@@ -145,9 +145,9 @@
 									<tr>
 										<th></th> 
 										<th></th>
-										<th>Total</th>
+										<th><?php echo tr("Total")?></th>
 										<th id = "Totalreceipt">0</th>
-										<th>DH</th>
+										<th><?php echo tr("$")?></th>
 									</tr>
 								</tfoot>
 							</table>
