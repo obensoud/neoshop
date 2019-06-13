@@ -1,0 +1,251 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Neoshop\n"
+"POT-Creation-Date: 2019-06-08 11:38+0200\n"
+"PO-Revision-Date: 2019-06-09 19:25+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar_MA\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2\n"
+"X-Poedit-Basepath: ../../..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: tr\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: .\n"
+
+#: assests/jquery-ui/jquery-ui.min.js:10
+msgid "'"
+msgstr "‘"
+
+#: barcode.php:7 brand.php:11 categories.php:9 groupOptionUser.php:8
+#: includes/header.php:81 myInf.php:12 optionuser.php:8 orders.php:18
+#: product.php:8 profiluser.php:8 setting.php:14 user.php:8
+msgid "Home"
+msgstr "الصفحة الرئيسية"
+
+#: brand.php:12 includes/header.php:83 lowStock.php:32 lowStock.php:106
+#: lowStock.php:272 product.php:32 product.php:114 product.php:286
+msgid "Brand"
+msgstr "العلامه التجاريه"
+
+#: brand.php:17
+msgid "Géstion des Marques"
+msgstr ""
+
+#: brand.php:24 brand.php:50
+msgid "Ajouter une marque"
+msgstr ""
+
+#: brand.php:30
+msgid "Le nom des marques"
+msgstr ""
+
+#: brand.php:31
+msgid "Status"
+msgstr "الحالة"
+
+#: brand.php:32
+msgid "Options"
+msgstr "خيارات"
+
+#: brand.php:57
+msgid "Nom de la marque"
+msgstr ""
+
+#: brand.php:68 brand.php:124
+msgid "Sélectionner"
+msgstr ""
+
+#: brand.php:69 brand.php:125
+msgid "Disponible"
+msgstr ""
+
+#: brand.php:70 brand.php:126
+msgid "Non Disponible"
+msgstr ""
+
+#: brand.php:78 brand.php:136 brand.php:163
+msgid "Fermer"
+msgstr "فرمر"
+
+#: brand.php:80 brand.php:138
+msgid "Enregistrer les changements"
+msgstr ""
+
+#: brand.php:100
+msgid "Modifier la marque"
+msgstr ""
+
+#: brand.php:108
+msgid "Chargement"
+msgstr ""
+
+#: brand.php:113
+msgid "Nom de marque"
+msgstr ""
+
+#: brand.php:157
+msgid "Supprimer la Marque"
+msgstr ""
+
+#: brand.php:160
+msgid "Voulez-vous vraiment supprimer ?"
+msgstr ""
+
+#: brand.php:164
+msgid "Sauvegarder les modifications"
+msgstr ""
+
+#: dashboard.php:45
+msgid "Total products"
+msgstr "مجموع المنتجات"
+
+#: dashboard.php:57
+msgid "Total Orders"
+msgstr "مجموع الطلبيات"
+
+#: dashboard.php:69
+msgid "Number of product extinction"
+msgstr "عدد انقراض المنتجات"
+
+#: dashboard.php:103
+msgid "Total income in "
+msgstr "Totale des revenue en"
+
+#: dashboard.php:103 dashboard.php:150
+msgid "$"
+msgstr "‫DH"
+
+#: dashboard.php:113
+msgid "Delete ticket"
+msgstr "حذف التذكرة"
+
+#: dashboard.php:117
+msgid "Save the ticket"
+msgstr "حفظ التذكرة"
+
+#: dashboard.php:120
+msgid "New ticket"
+msgstr "تذكره جديده"
+
+#: dashboard.php:124
+msgid "Print"
+msgstr "طباعه"
+
+#: dashboard.php:126
+msgid "Create a ticket"
+msgstr "إنشاء تذكره"
+
+#: dashboard.php:135
+msgid "Product Name"
+msgstr "اسم المنتج"
+
+#: dashboard.php:136
+msgid "Quantity"
+msgstr "كمية"
+
+#: dashboard.php:137
+msgid "U.P"
+msgstr "P.U"
+
+#: dashboard.php:138 dashboard.php:148
+msgid "Total"
+msgstr "مجموع"
+
+#: includes/header.php:10
+msgid "Management System"
+msgstr "نظام الاداره"
+
+#: includes/header.php:85
+msgid "Category"
+msgstr "فئة"
+
+#: includes/header.php:87
+msgid "Product"
+msgstr "المنتج"
+
+#: includes/header.php:90
+msgid "Order"
+msgstr "طلب"
+
+#: includes/header.php:92
+msgid "New Order"
+msgstr "طلب جديد"
+
+#: includes/header.php:93
+msgid "Liste des commandes"
+msgstr ""
+
+#: includes/header.php:98
+msgid "Restaurant"
+msgstr "مطعم"
+
+#: includes/header.php:102
+msgid "Add Menu"
+msgstr "أضافه قائمه"
+
+#: includes/header.php:105
+msgid "Bar"
+msgstr "بار"
+
+#: includes/header.php:108
+msgid "Kitchen"
+msgstr "المطبخ"
+
+#: includes/header.php:111
+msgid "Order Ready"
+msgstr "طلب جاهز"
+
+#: includes/header.php:117
+msgid "Analysis"
+msgstr "تحليل"
+
+#: includes/header.php:121
+msgid "Sales report"
+msgstr "تقرير المبيعات"
+
+#: includes/header.php:124
+msgid "Analysis with graph"
+msgstr "تحليل مع الرسم البياني"
+
+#: includes/header.php:129
+msgid "Bar code"
+msgstr "رمز الشريط"
+
+#: includes/header.php:133
+msgid "Hello"
+msgstr "مرحبا"
+
+#: includes/header.php:137
+msgid "Parameter"
+msgstr "المعلمه"
+
+#: includes/header.php:138
+msgid "Logout"
+msgstr "الخروج"
+
+#: index.php:86
+msgid "Please Sign in"
+msgstr "الرجاء تسجيل الدخول"
+
+#: index.php:103
+msgid "Username"
+msgstr "اسم المستخدم"
+
+#: index.php:109
+msgid "Password"
+msgstr "كلمه السر"
+
+#: index.php:116
+msgid "Sign in"
+msgstr "تسجيل الدخول"
+
+#~ msgid "Totale des revenue en DH"
+#~ msgstr "Totale des revenue en DH"
+
+#~ msgid "string"
+#~ msgstr "yes omar you did it"

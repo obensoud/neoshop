@@ -1,0 +1,251 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Neoshop\n"
+"POT-Creation-Date: 2019-06-08 11:38+0200\n"
+"PO-Revision-Date: 2019-06-08 11:57+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2\n"
+"X-Poedit-Basepath: ../../..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: tr\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: .\n"
+
+#: assests/jquery-ui/jquery-ui.min.js:10
+msgid "'"
+msgstr ""
+
+#: barcode.php:7 brand.php:11 categories.php:9 groupOptionUser.php:8
+#: includes/header.php:81 myInf.php:12 optionuser.php:8 orders.php:18
+#: product.php:8 profiluser.php:8 setting.php:14 user.php:8
+msgid "Home"
+msgstr "Accueil"
+
+#: brand.php:12 includes/header.php:83 lowStock.php:32 lowStock.php:106
+#: lowStock.php:272 product.php:32 product.php:114 product.php:286
+msgid "Brand"
+msgstr "﻿Marque"
+
+#: brand.php:17
+msgid "Géstion des Marques"
+msgstr ""
+
+#: brand.php:24 brand.php:50
+msgid "Ajouter une marque"
+msgstr ""
+
+#: brand.php:30
+msgid "Le nom des marques"
+msgstr ""
+
+#: brand.php:31
+msgid "Status"
+msgstr ""
+
+#: brand.php:32
+msgid "Options"
+msgstr ""
+
+#: brand.php:57
+msgid "Nom de la marque"
+msgstr ""
+
+#: brand.php:68 brand.php:124
+msgid "Sélectionner"
+msgstr ""
+
+#: brand.php:69 brand.php:125
+msgid "Disponible"
+msgstr ""
+
+#: brand.php:70 brand.php:126
+msgid "Non Disponible"
+msgstr ""
+
+#: brand.php:78 brand.php:136 brand.php:163
+msgid "Fermer"
+msgstr ""
+
+#: brand.php:80 brand.php:138
+msgid "Enregistrer les changements"
+msgstr ""
+
+#: brand.php:100
+msgid "Modifier la marque"
+msgstr ""
+
+#: brand.php:108
+msgid "Chargement"
+msgstr ""
+
+#: brand.php:113
+msgid "Nom de marque"
+msgstr ""
+
+#: brand.php:157
+msgid "Supprimer la Marque"
+msgstr ""
+
+#: brand.php:160
+msgid "Voulez-vous vraiment supprimer ?"
+msgstr ""
+
+#: brand.php:164
+msgid "Sauvegarder les modifications"
+msgstr ""
+
+#: dashboard.php:45
+msgid "Total products"
+msgstr "Total produits"
+
+#: dashboard.php:57
+msgid "Total Orders"
+msgstr "Total des commandes"
+
+#: dashboard.php:69
+msgid "Number of product extinction"
+msgstr "Nombre d’extinction de produit"
+
+#: dashboard.php:103
+msgid "Total income in "
+msgstr "Totale des revenue en"
+
+#: dashboard.php:103 dashboard.php:150
+msgid "$"
+msgstr "€"
+
+#: dashboard.php:113
+msgid "Delete ticket"
+msgstr "Supprimer le ticket"
+
+#: dashboard.php:117
+msgid "Save the ticket"
+msgstr "Sauvegarder le ticket"
+
+#: dashboard.php:120
+msgid "New ticket"
+msgstr "Nouveau ticket"
+
+#: dashboard.php:124
+msgid "Print"
+msgstr "Imprimer"
+
+#: dashboard.php:126
+msgid "Create a ticket"
+msgstr "Créer un ticket"
+
+#: dashboard.php:135
+msgid "Product Name"
+msgstr "Nom du produit"
+
+#: dashboard.php:136
+msgid "Quantity"
+msgstr "Quantité"
+
+#: dashboard.php:137
+msgid "U.P"
+msgstr "P.U"
+
+#: dashboard.php:138 dashboard.php:148
+msgid "Total"
+msgstr "Total"
+
+#: includes/header.php:10
+msgid "Management System"
+msgstr "Système de gestion"
+
+#: includes/header.php:85
+msgid "Category"
+msgstr "Catégorie"
+
+#: includes/header.php:87
+msgid "Product"
+msgstr "Produit"
+
+#: includes/header.php:90
+msgid "Order"
+msgstr "Commande"
+
+#: includes/header.php:92
+msgid "New Order"
+msgstr "Nouvelle commande"
+
+#: includes/header.php:93
+msgid "Liste des commandes"
+msgstr ""
+
+#: includes/header.php:98
+msgid "Restaurant"
+msgstr "Restaurant"
+
+#: includes/header.php:102
+msgid "Add Menu"
+msgstr "Rajouter un Menu"
+
+#: includes/header.php:105
+msgid "Bar"
+msgstr "Bar"
+
+#: includes/header.php:108
+msgid "Kitchen"
+msgstr "Cuisine"
+
+#: includes/header.php:111
+msgid "Order Ready"
+msgstr "Commande Prêt"
+
+#: includes/header.php:117
+msgid "Analysis"
+msgstr "Analyse"
+
+#: includes/header.php:121
+msgid "Sales report"
+msgstr "Rapport de vente"
+
+#: includes/header.php:124
+msgid "Analysis with graph"
+msgstr "Analyse avec graphe"
+
+#: includes/header.php:129
+msgid "Bar code"
+msgstr "Codebar"
+
+#: includes/header.php:133
+msgid "Hello"
+msgstr "Bonjour"
+
+#: includes/header.php:137
+msgid "Parameter"
+msgstr "Paramètre"
+
+#: includes/header.php:138
+msgid "Logout"
+msgstr "Déconnexion"
+
+#: index.php:86
+msgid "Please Sign in"
+msgstr "Veuillez vous connecter"
+
+#: index.php:103
+msgid "Username"
+msgstr "Nom d’utilisateur"
+
+#: index.php:109
+msgid "Password"
+msgstr "Mot de passe"
+
+#: index.php:116
+msgid "Sign in"
+msgstr "Se connecter"
+
+#~ msgid "Totale des revenue en DH"
+#~ msgstr "Totale des revenue en DH"
+
+#~ msgid "string"
+#~ msgstr "yes omar you did it"
