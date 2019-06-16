@@ -63,9 +63,9 @@
 	        	<label class="col-sm-1 control-label">: </label>
 				    <div class="col-sm-8">
 				      <select class="form-control" id="profilStatus" name="profilStatus">
-				      	<option value="">~~Sélectionner~~</option>
-				      	<option value="1">Disponible</option>
-				      	<option value="2">Indisponible</option>
+				      	<option value="">~~Select~~</option>
+				      	<option value="1">Available</option>
+				      	<option value="2">InAvailable</option>
 				      </select>
 				    </div>
 	        </div> <!-- /form-group-->	         	        
@@ -73,7 +73,7 @@
 	      </div> <!-- /modal-body -->
 	      
 	      <div class="modal-footer">
-	        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 	        
 	        <button type="submit" class="btn btn-primary" id="createProfilBtn" data-loading-text="Loading..." autocomplete="off">Enregistrer les modifications </button>
 	      </div>
@@ -95,7 +95,7 @@
     	<form class="form-horizontal" id="editBrandForm" action="php_action/editProfilUser.php" method="POST">
 	      <div class="modal-header">
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	        <h4 class="modal-title"><i class="fa fa-edit"></i> Modifier le profil</h4>
+	        <h4 class="modal-title"><i class="fa fa-edit"></i>Edit le profil</h4>
 	      </div>
 	      <div class="modal-body">
 
@@ -119,9 +119,9 @@
 		        	<label class="col-sm-1 control-label">: </label>
 					    <div class="col-sm-8">
 					      <select class="form-control" id="editBrandStatus" name="editBrandStatus">
-					      	<option value="">~~Sélectionner~~</option>
+					      	<option value="">~~Select~~</option>
 					      	<option value="1">Disponble</option>
-					      	<option value="2">Indisponible</option>
+					      	<option value="2">InAvailable</option>
 					      </select>
 					    </div>
 		        </div> <!-- /form-group-->	
@@ -131,7 +131,7 @@
 	      </div> <!-- /modal-body -->
 	      
 	      <div class="modal-footer editBrandFooter">
-	        <button type="button" class="btn btn-default" data-dismiss="modal"> <i class="glyphicon glyphicon-remove-sign"></i> Fermer</button>
+	        <button type="button" class="btn btn-default" data-dismiss="modal"> <i class="glyphicon glyphicon-remove-sign"></i> Close</button>
 	        
 	        <button type="submit" class="btn btn-success" id="editBrandBtn" data-loading-text="Loading..." autocomplete="off"> <i class="glyphicon glyphicon-ok-sign"></i> Enregistrer les modifications</button>
 	      </div>
@@ -152,13 +152,13 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title"><i class="glyphicon glyphicon-trash"></i> Supprimer un profil</h4>
+        <h4 class="modal-title"><i class="glyphicon glyphicon-trash"></i> remove un profil</h4>
       </div>
       <div class="modal-body">
-        <p>Voulez vous vraiment supprimer ?</p>
+        <p>Voulez vous vraiment remove ?</p>
       </div>
       <div class="modal-footer removeBrandFooter">
-        <button type="button" class="btn btn-default" data-dismiss="modal"> <i class="glyphicon glyphicon-remove-sign"></i> Fermer</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal"> <i class="glyphicon glyphicon-remove-sign"></i> Close</button>
         <button type="button" class="btn btn-primary" id="removeBrandBtn" data-loading-text="Loading..."> <i class="glyphicon glyphicon-ok-sign"></i>Enregistrer les modifications </button>
       </div>
     </div><!-- /.modal-content -->

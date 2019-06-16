@@ -24,7 +24,7 @@
                 <div class="form-group">
                   <label for="email">Choisir le code barre:</label>
                   <select class="form-control" name="productName[]" style= "width:500px;" id="barcodeValue" onchange="hiddenimprimebarcode();">
-                      <option value="">~~Sélectionner~~</option>
+                      <option value="">~~Select~~</option>
                       <?php
                       $productSql = "SELECT * FROM product WHERE active = 1 AND status = 1 AND quantity != 0 ";
                       $productData = $connect->query($productSql);

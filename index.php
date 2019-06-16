@@ -40,6 +40,8 @@ if($_POST) {
 				// set session
 				$_SESSION['userId'] = $user_id;
 				$_SESSION['username'] = $username;
+				$_SESSION['language'] = $value['language'];
+				
 				header('location: dashboard.php');	
 			} else{
 				

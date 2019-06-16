@@ -64,7 +64,7 @@
 						<label class="col-sm-1 control-label">: </label>
 						<div class="col-sm-8">
 							<select type="text" class="form-control" id="editCategoryName" name="editCategoryName" >
-								<option value="">~~Sélectionner~~</option>
+								<option value="">~~Select~~</option>
 								<?php 
 								$sql = "SELECT option_id, option_name, option_active, option_status FROM option_user WHERE option_status = 1 AND option_active = 1";
 								$result = $connect->query($sql);
@@ -82,9 +82,9 @@
 							<label class="col-sm-1 control-label">: </label>
 							<div class="col-sm-8">
 								<select class="form-control" id="brandStatus" name="brandStatus">
-									<option value="">~~Sélectionner~~</option>
-									<option value="1">Disponible</option>
-									<option value="2">Indisponible</option>
+									<option value="">~~Select~~</option>
+									<option value="1">Available</option>
+									<option value="2">InAvailable</option>
 								</select>
 							</div>
 						</div> <!-- /form-group-->	         	        
@@ -92,7 +92,7 @@
 					</div> <!-- /modal-body -->
 
 					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 
 						<button type="submit" class="btn btn-primary" id="createBrandBtn" data-loading-text="Loading..." autocomplete="off">Enregistrer les modifications</button>
 					</div>
@@ -114,7 +114,7 @@
 				<form class="form-horizontal" id="editBrandForm" action="php_action/editGroupOption.php" method="POST">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title"><i class="fa fa-edit"></i> Modifier un groupe d'option</h4>
+						<h4 class="modal-title"><i class="fa fa-edit"></i>Edit un groupe d'option</h4>
 					</div>
 					<div class="modal-body">
 
@@ -122,7 +122,7 @@
 
 						<div class="modal-loading div-hide" style="width:50px; margin:auto;padding-top:50px; padding-bottom:50px;">
 							<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
-							<span class="sr-only">Chargement...</span>
+							<span class="sr-only">Loading...</span>
 						</div>
 
 						<div class="edit-brand-result">
@@ -130,7 +130,7 @@
 								<label for="editBrandName" class="col-sm-3 control-label">Nom du groupe d'option: </label>
 								<label class="col-sm-1 control-label">: </label>
 								<div class="col-sm-8">
-									<input type="text" class="form-control" id="editGroupOptionName" placeholder="Group Option Name" name="editGroupOptionName" autocomplete="off">
+									<input type="text" class="form-control" id="editGroupOptionName" placeholder="Group Name of the option" name="editGroupOptionName" autocomplete="off">
 								</div>
 							</div> <!-- /form-group-->	 
 							<div class="form-group">
@@ -138,7 +138,7 @@
 					        	<label class="col-sm-1 control-label">: </label>
 								    <div class="col-sm-8">
 								      <select type="text" class="form-control" id="editOptionName" name="editOptionName" >
-								      	<option value="">~~Sélectionner~~</option>
+								      	<option value="">~~Select~~</option>
 								      	<?php 
 								      	$sql = "SELECT option_id, option_name, option_active, option_status FROM option_user WHERE option_status = 1 AND option_active = 1";
 												$result = $connect->query($sql);
@@ -156,9 +156,9 @@
 								<label class="col-sm-1 control-label">: </label>
 								<div class="col-sm-8">
 									<select class="form-control" id="editBrandStatus" name="editBrandStatus">
-										<option value="">~~Sélectionner~~</option>
-										<option value="1">Disponible</option>
-										<option value="2">indisponible</option>
+										<option value="">~~Select~~</option>
+										<option value="1">Available</option>
+										<option value="2">inAvailable</option>
 									</select>
 								</div>
 							</div> <!-- /form-group-->	
@@ -168,7 +168,7 @@
 					</div> <!-- /modal-body -->
 
 					<div class="modal-footer editBrandFooter">
-						<button type="button" class="btn btn-default" data-dismiss="modal"> <i class="glyphicon glyphicon-remove-sign"></i> Fermer</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal"> <i class="glyphicon glyphicon-remove-sign"></i> Close</button>
 
 						<button type="submit" class="btn btn-success" id="editBrandBtn" data-loading-text="Loading..." autocomplete="off"> <i class="glyphicon glyphicon-ok-sign"></i> Enregistrer les modifications</button>
 					</div>
@@ -189,13 +189,13 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<h4 class="modal-title"><i class="glyphicon glyphicon-trash"></i> Supprimer un groupe d'option </h4>
+					<h4 class="modal-title"><i class="glyphicon glyphicon-trash"></i> remove un groupe d'option </h4>
 				</div>
 				<div class="modal-body">
-					<p>Voulez vous vraiment supprimer ?</p>
+					<p>Voulez vous vraiment remove ?</p>
 				</div>
 				<div class="modal-footer removeBrandFooter">
-					<button type="button" class="btn btn-default" data-dismiss="modal"> <i class="glyphicon glyphicon-remove-sign"></i> Fermer </button>
+					<button type="button" class="btn btn-default" data-dismiss="modal"> <i class="glyphicon glyphicon-remove-sign"></i> Close </button>
 					<button type="button" class="btn btn-primary" id="removeBrandBtn" data-loading-text="Loading..."> <i class="glyphicon glyphicon-ok-sign"></i> Enregistrer les modificationss</button>
 				</div>
 			</div><!-- /.modal-content -->

@@ -14,20 +14,20 @@ require_once 'php_action/localisation.php';
 
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<div class="page-heading"> <i class="glyphicon glyphicon-edit"></i><?php echo tr("Géstion des Marques")?></div>
+				<div class="page-heading"> <i class="glyphicon glyphicon-edit"></i><?php echo tr("Brand Management")?></div>
 			</div> <!-- /panel-heading -->
 			<div class="panel-body">
 
 				<div class="remove-messages"></div>
 
 				<div class="div-action pull pull-right" style="padding-bottom:20px;">
-					<button class="btn btn-default button1" data-toggle="modal" data-target="#addBrandModel"> <i class="glyphicon glyphicon-plus-sign"></i><?php echo tr("Ajouter une marque")?></button>
+					<button class="btn btn-default button1" data-toggle="modal" data-target="#addBrandModel"> <i class="glyphicon glyphicon-plus-sign"></i><?php echo tr("Add brand")?></button>
 				</div> <!-- /div-action -->				
 				
 				<table class="table" id="manageBrandTable">
 					<thead>
 						<tr>							
-							<th><?php echo tr("Le nom des marques")?></th>
+							<th><?php echo tr("Name of brand")?></th>
 							<th><?php echo tr("Status")?></th>
 							<th style="width:15%;"><?php echo tr("Options")?></th>
 						</tr>
@@ -47,27 +47,27 @@ require_once 'php_action/localisation.php';
     	<form class="form-horizontal" id="submitBrandForm" action="php_action/createBrand.php" method="POST">
 	      <div class="modal-header">
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	        <h4 class="modal-title"><i class="fa fa-plus"></i><?php echo tr("Ajouter une marque")?></h4>
+	        <h4 class="modal-title"><i class="fa fa-plus"></i><?php echo tr("Add brand")?></h4>
 	      </div>
 	      <div class="modal-body">
 
 	      	<div id="add-brand-messages"></div>
 
 	        <div class="form-group">
-	        	<label for="brandName" class="col-sm-3 control-label"><?php echo tr("Nom de la marque")?></label>
+	        	<label for="brandName" class="col-sm-3 control-label"><?php echo tr("Name of brand")?></label>
 	        	<label class="col-sm-1 control-label">: </label>
 				    <div class="col-sm-8">
 				      <input type="text" class="form-control" id="brandName" placeholder="Marque" name="brandName" autocomplete="off">
 				    </div>
 	        </div> <!-- /form-group-->	         	        
 	        <div class="form-group">
-	        	<label for="brandStatus" class="col-sm-3 control-label">Status:</label>
+	        	<label for="brandStatus" class="col-sm-3 control-label"><?php echo tr("Status:")?></label>
 	        	<label class="col-sm-1 control-label">: </label>
 				    <div class="col-sm-8">
 				      <select class="form-control" id="brandStatus" name="brandStatus">
-				      	<option value="">~~<?php echo tr("Sélectionner")?>~~</option>
-				      	<option value="1"><?php echo tr("Disponible")?></option>
-				      	<option value="2"><?php echo tr("Non Disponible")?></option>
+				      	<option value="">~~<?php echo tr("Select")?>~~</option>
+				      	<option value="1"><?php echo tr("Available")?></option>
+				      	<option value="2"><?php echo tr("Not Available")?></option>
 				      </select>
 				    </div>
 	        </div> <!-- /form-group-->	         	        
@@ -75,9 +75,9 @@ require_once 'php_action/localisation.php';
 	      </div> <!-- /modal-body -->
 	      
 	      <div class="modal-footer">
-	        <button type="button" class="btn btn-default" data-dismiss="modal"> <?php echo tr("Fermer")?></button>
+	        <button type="button" class="btn btn-default" data-dismiss="modal"> <?php echo tr("Close")?></button>
 	        
-	        <button type="submit" class="btn btn-primary" id="createBrandBtn" data-loading-text="Loading..." autocomplete="off"><?php echo tr("Enregistrer les changements")?></button>
+	        <button type="submit" class="btn btn-primary" id="createBrandBtn" data-loading-text="Loading..." autocomplete="off"><?php echo tr("Save change")?></button>
 	      </div>
 	      <!-- /modal-footer -->
      	</form>
@@ -97,7 +97,7 @@ require_once 'php_action/localisation.php';
     	<form class="form-horizontal" id="editBrandForm" action="php_action/editBrand.php" method="POST">
 	      <div class="modal-header">
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	        <h4 class="modal-title"><i class="fa fa-edit"></i><?php echo tr("Modifier la marque")?></h4>
+	        <h4 class="modal-title"><i class="fa fa-edit"></i><?php echo tr("Change the brand")?></h4>
 	      </div>
 	      <div class="modal-body">
 
@@ -105,25 +105,25 @@ require_once 'php_action/localisation.php';
 
 	      	<div class="modal-loading div-hide" style="width:50px; margin:auto;padding-top:50px; padding-bottom:50px;">
 						<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
-						<span class="sr-only"><?php echo tr("Chargement")?>...</span>
+						<span class="sr-only"><?php echo tr("Loading ...")?></span>
 					</div>
 
 		      <div class="edit-brand-result">
 		      	<div class="form-group">
-		        	<label for="editBrandName" class="col-sm-3 control-label"><?php echo tr("Nom de marque")?></label>
+		        	<label for="editBrandName" class="col-sm-3 control-label"><?php echo tr("Brand name")?></label>
 		        	<label class="col-sm-1 control-label">: </label>
 					    <div class="col-sm-8">
 					      <input type="text" class="form-control" id="editBrandName" placeholder="Marque" name="editBrandName" autocomplete="off">
 					    </div>
 		        </div> <!-- /form-group-->	         	        
 		        <div class="form-group">
-		        	<label for="editBrandStatus" class="col-sm-3 control-label">Status:</label>
+		        	<label for="editBrandStatus" class="col-sm-3 control-label"><?php echo tr("Status:")?></label>
 		        	<label class="col-sm-1 control-label">: </label>
 					    <div class="col-sm-8">
 					      <select class="form-control" id="editBrandStatus" name="editBrandStatus">
-					      	<option value="">~~<?php echo tr("Sélectionner")?>~~</option>
-					      	<option value="1"><?php echo tr("Disponible")?></option>
-					      	<option value="2"><?php echo tr("Non Disponible")?></option>
+					      	<option value="">~~<?php echo tr("Select")?>~~</option>
+					      	<option value="1"><?php echo tr("Available")?></option>
+					      	<option value="2"><?php echo tr("Not Available")?></option>
 					      </select>
 					    </div>
 		        </div> <!-- /form-group-->	
@@ -133,9 +133,9 @@ require_once 'php_action/localisation.php';
 	      </div> <!-- /modal-body -->
 	      
 	      <div class="modal-footer editBrandFooter">
-	        <button type="button" class="btn btn-default" data-dismiss="modal"> <i class="glyphicon glyphicon-remove-sign"></i><?php echo tr("Fermer")?></button>
+	        <button type="button" class="btn btn-default" data-dismiss="modal"> <i class="glyphicon glyphicon-remove-sign"></i><?php echo tr("Close")?></button>
 	        
-	        <button type="submit" class="btn btn-success" id="editBrandBtn" data-loading-text="Loading..." autocomplete="off"> <i class="glyphicon glyphicon-ok-sign"></i><?php echo tr("Enregistrer les changements")?></button>
+	        <button type="submit" class="btn btn-success" id="editBrandBtn" data-loading-text="Loading..." autocomplete="off"> <i class="glyphicon glyphicon-ok-sign"></i><?php echo tr("Save change")?></button>
 	      </div>
 	      <!-- /modal-footer -->
      	</form>
@@ -154,14 +154,14 @@ require_once 'php_action/localisation.php';
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title"><i class="glyphicon glyphicon-trash"></i> <?php echo tr("Supprimer la Marque")?></h4>
+        <h4 class="modal-title"><i class="glyphicon glyphicon-trash"></i> <?php echo tr("Delete the brand")?></h4>
       </div>
       <div class="modal-body">
-        <p><?php echo tr("Voulez-vous vraiment supprimer ?")?></p>
+        <p><?php echo tr("Are you sure you want to delete?")?></p>
       </div>
       <div class="modal-footer removeBrandFooter">
-        <button type="button" class="btn btn-default" data-dismiss="modal"> <i class="glyphicon glyphicon-remove-sign"></i><?php echo tr("Fermer")?></button>
-        <button type="button" class="btn btn-primary" id="removeBrandBtn" data-loading-text="Loading..."> <i class="glyphicon glyphicon-ok-sign"></i><?php echo tr("Sauvegarder les modifications")?></button>
+        <button type="button" class="btn btn-default" data-dismiss="modal"> <i class="glyphicon glyphicon-remove-sign"></i><?php echo tr("Close")?></button>
+        <button type="button" class="btn btn-primary" id="removeBrandBtn" data-loading-text="Loading..."> <i class="glyphicon glyphicon-ok-sign"></i><?php echo tr("Save change")?></button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->

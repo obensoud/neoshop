@@ -6,32 +6,32 @@
 
 		<ol class="breadcrumb">
 			<li><a href="dashboard.php"><?php echo tr("Home")?></a></li>		  
-			<li><a href="setting.php">Paramètres</a></li>
-			<li class="active">Utilisateur</li>
+			<li><a href="setting.php"><?php echo tr("Settings")?></a></li>
+			<li class="active"><?php echo tr("User")?></li>
 		</ol>
 
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<div class="page-heading"> <i class="glyphicon glyphicon-edit"></i> Utilisateur</div>
+				<div class="page-heading"> <i class="glyphicon glyphicon-edit"></i><?php echo tr("User")?></div>
 			</div> <!-- /panel-heading -->
 			<div class="panel-body">
 
 				<div class="remove-messages"></div>
 
 				<div class="div-action pull pull-right" style="padding-bottom:20px;">
-					<button class="btn btn-default button1" data-toggle="modal" id="addProductModalBtn" data-target="#addProductModal"> <i class="glyphicon glyphicon-plus-sign"></i> Ajouter un utilisateur </button>
+					<button class="btn btn-default button1" data-toggle="modal" id="addProductModalBtn" data-target="#addProductModal"> <i class="glyphicon glyphicon-plus-sign"></i><?php echo tr("Add user")?> </button>
 				</div> <!-- /div-action -->				
 				
 				<table class="table" id="manageProductTable">
 					<thead>
 						<tr>
-							<th style="width:10%;">Photo</th>							
-							<th>Nom du collaborateur</th>
-							<th>Email</th>
-							<th>Profil</th>
-							<th>Options</th>
-							<th>Statut</th>
-							<th style="width:15%;">Options</th>
+							<th style="width:10%;"><?php echo tr("Photo")?></th>							
+							<th><?php echo tr("Name of collaborator")?></th>
+							<th><?php echo tr("Email")?></th>
+							<th><?php echo tr("Profil")?></th>
+							<th><?php echo tr("Options")?></th>
+							<th><?php echo tr("Statut")?></th>
+							<th style="width:15%;"><?php echo tr("Options")?></th>
 						</tr>
 					</thead>
 				</table>
@@ -51,7 +51,7 @@
     	<form class="form-horizontal" id="submitProductForm" action="php_action/createUser.php" method="POST" enctype="multipart/form-data">
 	      <div class="modal-header">
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	        <h4 class="modal-title"><i class="fa fa-plus"></i> Ajouter un utilisateur</h4>
+	        <h4 class="modal-title"><i class="fa fa-plus"></i>Ajouter un utilisateur</h4>
 	      </div>
 
 	      <div class="modal-body" style="max-height:450px; overflow:auto;">
@@ -65,7 +65,7 @@
 					    <!-- the avatar markup -->
 							<div id="kv-avatar-errors-1" class="center-block" style="display:none;"></div>							
 					    <div class="kv-avatar center-block">					        
-					        <input type="file" class="form-control" id="productImage" placeholder="Nom du produit" name="productImage" class="file-loading" style="width:auto;"/>
+					        <input type="file" class="form-control" id="productImage" placeholder="Nom du Product" name="productImage" class="file-loading" style="width:auto;"/>
 					    </div>
 				      
 				    </div>
@@ -75,7 +75,7 @@
 	        	<label for="CollaboratorName" class="col-sm-3 control-label"> Nom du collaborateur </label>
 	        	<label class="col-sm-1 control-label">: </label>
 				    <div class="col-sm-8">
-				      <input type="text" class="form-control" id="CollaboratorName" placeholder="Nom du collaborateur" name="CollaboratorName" autocomplete="off">
+				      <input type="text" class="form-control" id="CollaboratorName" placeholder="Name of collaborator" name="CollaboratorName" autocomplete="off">
 				    </div>
 	        </div> <!-- /form-group-->	    
 			<div class="form-group">
@@ -104,7 +104,7 @@
 	        	<label class="col-sm-1 control-label">: </label>
 				    <div class="col-sm-8">
 				      <select class="form-control" id="Profil" name="Profil">
-				      	<option value="">~~Sélectionner~~</option>
+				      	<option value="">~~Select~~</option>
 				      	<?php 
 				      	$sql = "SELECT profil_id, profil_name, profil_active, profil_status FROM profil_user WHERE profil_status = 1 AND profil_active = 1";
 								$result = $connect->query($sql);
@@ -119,11 +119,11 @@
 	        </div> <!-- /form-group-->	
 
 	        <div class="form-group">
-	        	<label for="OptionName" class="col-sm-3 control-label"> Nom de l'option </label>
+	        	<label for="OptionName" class="col-sm-3 control-label"> <?php echo tr("Name of the option")?> </label>
 	        	<label class="col-sm-1 control-label">: </label>
 				    <div class="col-sm-8">
 				      <select type="text" class="form-control" id="OptionName" placeholder="Nom de l'option " name="OptionName" >
-				      	<option value="">~~Sélectionner~~</option>
+				      	<option value="">~~<?php echo tr("Select")?>~~</option>
 				      	<?php 
 				      	$sql = "SELECT option_id, option_name, option_active, option_status FROM option_user WHERE option_status = 1 AND option_active = 1";
 								$result = $connect->query($sql);
@@ -138,22 +138,22 @@
 	        </div> <!-- /form-group-->					        	         	       
 
 	        <div class="form-group">
-	        	<label for="productStatus" class="col-sm-3 control-label"> Statut </label>
+	        	<label for="productStatus" class="col-sm-3 control-label"> <?php echo tr("Statut")?> </label>
 	        	<label class="col-sm-1 control-label">: </label>
 				    <div class="col-sm-8">
 				      <select class="form-control" id="productStatus" name="productStatus">
-				      	<option value="">~~Sélectionner~~</option>
-				      	<option value="1">Disponible</option>
-				      	<option value="2">Indisponible</option>
+				      	<option value="">~~<?php echo tr("Select")?>~~</option>
+				      	<option value="1"><?php echo tr("Available")?></option>
+				      	<option value="2"><?php echo tr("InAvailable")?></option>
 				      </select>
 				    </div>
 	        </div> <!-- /form-group-->	         	        
 	      </div> <!-- /modal-body -->
 	      
 	      <div class="modal-footer">
-	        <button type="button" class="btn btn-default" data-dismiss="modal"> <i class="glyphicon glyphicon-remove-sign"></i> Fermer</button>
+	        <button type="button" class="btn btn-default" data-dismiss="modal"> <i class="glyphicon glyphicon-remove-sign"></i> <?php echo tr("Close")?></button>
 	        
-	        <button type="submit" class="btn btn-primary" id="createProductBtn" data-loading-text="Loading..." autocomplete="off"> <i class="glyphicon glyphicon-ok-sign"></i> Enregistrer les modifications</button>
+	        <button type="submit" class="btn btn-primary" id="createProductBtn" data-loading-text="Loading..." autocomplete="off"> <i class="glyphicon glyphicon-ok-sign"></i> <?php echo tr("Save changes")?></button>
 	      </div> <!-- /modal-footer -->	      
      	</form> <!-- /.form -->	     
     </div> <!-- /modal-content -->    
@@ -169,21 +169,21 @@
     	    	
 	      <div class="modal-header">
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	        <h4 class="modal-title"><i class="fa fa-edit"></i> Modifier utilisateur</h4>
+	        <h4 class="modal-title"><i class="fa fa-edit"></i> <?php echo tr("Edit user")?></h4>
 	      </div>
 	      <div class="modal-body" style="max-height:450px; overflow:auto;">
 
 	      	<div class="div-loading">
 	      		<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
-						<span class="sr-only">Loading...</span>
+						<span class="sr-only"><?php echo tr("Loading...")?></span>
 	      	</div>
 
 	      	<div class="div-result">
 
 				  <!-- Nav tabs -->
 				  <ul class="nav nav-tabs" role="tablist">
-				    <li role="presentation" class="active"><a href="#photo" aria-controls="home" role="tab" data-toggle="tab">Photo</a></li>
-				    <li role="presentation"><a href="#productInfo" aria-controls="profile" role="tab" data-toggle="tab">Infos utilisateur</a></li>    
+				    <li role="presentation" class="active"><a href="#photo" aria-controls="home" role="tab" data-toggle="tab"><?php echo tr("Photo")?></a></li>
+				    <li role="presentation"><a href="#productInfo" aria-controls="profile" role="tab" data-toggle="tab"><?php echo tr("User Info")?></a></li>    
 				  </ul>
 
 				  <!-- Tab panes -->
@@ -197,7 +197,7 @@
 				    	<div id="edit-productPhoto-messages"></div>
 
 				    	<div class="form-group">
-			        	<label for="editProductImage" class="col-sm-3 control-label">Photo utilisateur: </label>
+			        	<label for="editProductImage" class="col-sm-3 control-label"><?php echo tr("User picture:")?> </label>
 			        	<label class="col-sm-1 control-label">: </label>
 						    <div class="col-sm-8">							    				   
 						      <img src="" id="getProductImage" class="thumbnail" style="width:250px; height:250px;" />
@@ -205,20 +205,20 @@
 			        </div> <!-- /form-group-->	     	           	       
 				    	
 			      	<div class="form-group">
-			        	<label for="editProductImage" class="col-sm-3 control-label">Sélectionner Photo: </label>
+			        	<label for="editProductImage" class="col-sm-3 control-label"><?php echo tr("Select Photo:")?> </label>
 			        	<label class="col-sm-1 control-label">: </label>
 						    <div class="col-sm-8">
 							    <!-- the avatar markup -->
 									<div id="kv-avatar-errors-1" class="center-block" style="display:none;"></div>							
 							    <div class="kv-avatar center-block">					        
-							        <input type="file" class="form-control" id="editProductImage" placeholder="Sélectionner Photo" name="editProductImage" class="file-loading" style="width:auto;"/>
+							        <input type="file" class="form-control" id="editProductImage" placeholder="Select Photo" name="editProductImage" class="file-loading" style="width:auto;"/>
 							    </div>
 						      
 						    </div>
 			        </div> <!-- /form-group-->	     	           	       
 
 			        <div class="modal-footer editProductPhotoFooter">
-				        <button type="button" class="btn btn-default" data-dismiss="modal"> <i class="glyphicon glyphicon-remove-sign"></i> Fermer</button>
+				        <button type="button" class="btn btn-default" data-dismiss="modal"> <i class="glyphicon glyphicon-remove-sign"></i> <?php echo tr("Close")?></button>
 				        
 				        <!-- <button type="submit" class="btn btn-success" id="editProductImageBtn" data-loading-text="Loading..."> <i class="glyphicon glyphicon-ok-sign"></i> Save Changes</button> -->
 				      </div>
@@ -234,15 +234,15 @@
 				    	<div id="edit-product-messages"></div>
 
 				    	<div class="form-group">
-			        	<label for="editProductName" class="col-sm-3 control-label">Nom du collaborateur </label>
+			        	<label for="editProductName" class="col-sm-3 control-label"><?php echo tr("Name of collaborator")?></label>
 			        	<label class="col-sm-1 control-label">: </label>
 						    <div class="col-sm-8">
-						      <input type="text" class="form-control" id="editProductName" placeholder="Nom du collaborateur" name="editProductName" autocomplete="off">
+						      <input type="text" class="form-control" id="editProductName" placeholder="Name of collaborator" name="editProductName" autocomplete="off">
 						    </div>
 			        </div> <!-- /form-group-->
 
 			        <div class="form-group">
-			        	<label for="editQuantity" class="col-sm-3 control-label">Email </label>
+			        	<label for="editQuantity" class="col-sm-3 control-label"><?php echo tr("Email")?> </label>
 			        	<label class="col-sm-1 control-label">: </label>
 						    <div class="col-sm-8">
 						      <input type="text" class="form-control" id="editQuantity" placeholder="Email" name="editQuantity" autocomplete="off">
@@ -250,11 +250,11 @@
 			        </div> <!-- /form-group-->   	        
 
 			        <div class="form-group">
-			        	<label for="editBrandName" class="col-sm-3 control-label">Nom profil </label>
+			        	<label for="editBrandName" class="col-sm-3 control-label"><?php echo tr("Profile name")?> </label>
 			        	<label class="col-sm-1 control-label">: </label>
 						    <div class="col-sm-8">
 						      <select class="form-control" id="editBrandName" name="editBrandName">
-						      	<option value="">~~Sélectionner~~</option>
+						      	<option value="">~~<?php echo tr("Select")?>~~</option>
 						      	<?php 
 						      	$sql = "SELECT profil_id, profil_name, profil_active, profil_status FROM profil_user WHERE profil_status = 1 AND profil_active = 1";
 										$result = $connect->query($sql);
@@ -269,11 +269,11 @@
 			        </div> <!-- /form-group-->	
 
 			        <div class="form-group">
-			        	<label for="editCategoryName" class="col-sm-3 control-label">Nom de l'option </label>
+			        	<label for="editCategoryName" class="col-sm-3 control-label"><?php echo tr("Name of the option")?> </label>
 			        	<label class="col-sm-1 control-label">: </label>
 						    <div class="col-sm-8">
 						      <select type="text" class="form-control" id="editCategoryName" name="editCategoryName" >
-						      	<option value="">~~Sélectionner~~</option>
+						      	<option value="">~~<?php echo tr("Select")?>~~</option>
 						      	<?php 
 						      	$sql = "SELECT option_id, option_name, option_active, option_status FROM option_user WHERE option_status = 1 AND option_active = 1";
 										$result = $connect->query($sql);
@@ -288,21 +288,21 @@
 			        </div> <!-- /form-group-->					        	         	       
 
 			        <div class="form-group">
-			        	<label for="editProductStatus" class="col-sm-3 control-label">Statut </label>
+			        	<label for="editProductStatus" class="col-sm-3 control-label"><?php echo tr("Statut")?> </label>
 			        	<label class="col-sm-1 control-label">: </label>
 						    <div class="col-sm-8">
 						      <select class="form-control" id="editProductStatus" name="editProductStatus">
-						      	<option value="">~~Sélectionner~~</option>
-						      	<option value="1">Disponible</option>
-						      	<option value="2">Indisponible</option>
+						      	<option value="">~~<?php echo tr("Select")?>~~</option>
+						      	<option value="1"><?php echo tr("Available")?></option>
+						      	<option value="2"><?php echo tr("InAvailable")?></option>
 						      </select>
 						    </div>
 			        </div> <!-- /form-group-->	         	        
 
 			        <div class="modal-footer editProductFooter">
-				        <button type="button" class="btn btn-default" data-dismiss="modal"> <i class="glyphicon glyphicon-remove-sign"></i>Fermer</button>
+				        <button type="button" class="btn btn-default" data-dismiss="modal"> <i class="glyphicon glyphicon-remove-sign"></i><?php echo tr("Close")?></button>
 				        
-				        <button type="submit" class="btn btn-success" id="editProductBtn" data-loading-text="Loading..."> <i class="glyphicon glyphicon-ok-sign"></i> Enregistrer les modifications</button>
+				        <button type="submit" class="btn btn-success" id="editProductBtn" data-loading-text="Loading..."> <i class="glyphicon glyphicon-ok-sign"></i> <?php echo tr("Save changes")?></button>
 				      </div> <!-- /modal-footer -->				     
 			        </form> <!-- /.form -->				     	
 				    </div>    
@@ -327,17 +327,17 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title"><i class="glyphicon glyphicon-trash"></i> Supprimer produit</h4>
+        <h4 class="modal-title"><i class="glyphicon glyphicon-trash"></i> <?php echo tr("remove Product")?></h4>
       </div>
       <div class="modal-body">
 
       	<div class="removeProductMessages"></div>
 
-        <p>Voulez vous vraiment supprimer ?</p>
+        <p><?php echo tr("Do you really want to delete?")?></p>
       </div>
       <div class="modal-footer removeProductFooter">
-        <button type="button" class="btn btn-default" data-dismiss="modal"> <i class="glyphicon glyphicon-remove-sign"></i> Fermer</button>
-        <button type="button" class="btn btn-primary" id="removeProductBtn" data-loading-text="Loading..."> <i class="glyphicon glyphicon-ok-sign"></i>Enregistrer les modifications</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal"> <i class="glyphicon glyphicon-remove-sign"></i> Close</button>
+        <button type="button" class="btn btn-primary" id="removeProductBtn" data-loading-text="Loading..."> <i class="glyphicon glyphicon-ok-sign"></i><?php echo tr("Save changes")?></button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->

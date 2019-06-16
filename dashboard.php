@@ -139,7 +139,7 @@
 										<th></th> 
 									</tr> 
 								</thead> 
-								<tbody id="ListDesProduit"> 
+								<tbody id="ListDesProduct"> 
 								</tbody>
 								<tfoot> <!-- Pied de tableau -->
 									<tr>

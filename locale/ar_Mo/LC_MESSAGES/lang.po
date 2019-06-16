@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Neoshop\n"
-"POT-Creation-Date: 2019-06-08 11:38+0200\n"
-"PO-Revision-Date: 2019-06-09 19:25+0200\n"
+"POT-Creation-Date: 2019-06-15 16:48+0200\n"
+"PO-Revision-Date: 2019-06-15 16:50+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ar_MA\n"
@@ -22,83 +22,135 @@ msgid "'"
 msgstr "‘"
 
 #: barcode.php:7 brand.php:11 categories.php:9 groupOptionUser.php:8
-#: includes/header.php:81 myInf.php:12 optionuser.php:8 orders.php:18
+#: includes/header.php:85 myInf.php:12 optionuser.php:8 orders.php:18
 #: product.php:8 profiluser.php:8 setting.php:14 user.php:8
 msgid "Home"
 msgstr "الصفحة الرئيسية"
 
-#: brand.php:12 includes/header.php:83 lowStock.php:32 lowStock.php:106
-#: lowStock.php:272 product.php:32 product.php:114 product.php:286
+#: brand.php:12 includes/header.php:86 lowStock.php:32 lowStock.php:106
+#: lowStock.php:272 product.php:32 product.php:286
 msgid "Brand"
 msgstr "العلامه التجاريه"
 
 #: brand.php:17
-msgid "Géstion des Marques"
-msgstr ""
+msgid "Brand Management"
+msgstr "اسم العلامة التجارية"
 
 #: brand.php:24 brand.php:50
-msgid "Ajouter une marque"
-msgstr ""
+msgid "Add brand"
+msgstr "إضافة علامة تجارية"
 
-#: brand.php:30
-msgid "Le nom des marques"
-msgstr ""
+#: brand.php:30 brand.php:57
+msgid "Name of brand"
+msgstr "اسم العلامة التجارية"
 
-#: brand.php:31
+#: brand.php:31 categories.php:29
 msgid "Status"
 msgstr "الحالة"
 
-#: brand.php:32
+#: brand.php:32 categories.php:30 product.php:35 user.php:32 user.php:34
 msgid "Options"
 msgstr "خيارات"
 
-#: brand.php:57
-msgid "Nom de la marque"
-msgstr ""
+#: brand.php:64 brand.php:120 categories.php:116
+msgid "Status:"
+msgstr "الحالة:"
 
-#: brand.php:68 brand.php:124
-msgid "Sélectionner"
-msgstr ""
+#: brand.php:68 brand.php:124 categories.php:68 categories.php:120
+#: product.php:118 product.php:137 product.php:156 product.php:290
+#: product.php:328 user.php:126 user.php:145 user.php:257 user.php:276
+#: user.php:295
+msgid "Select"
+msgstr "إختر"
 
-#: brand.php:69 brand.php:125
-msgid "Disponible"
-msgstr ""
+#: brand.php:69 brand.php:125 categories.php:69 categories.php:121
+#: product.php:157 product.php:329 user.php:146 user.php:296
+msgid "Available"
+msgstr "متاح"
 
-#: brand.php:70 brand.php:126
-msgid "Non Disponible"
-msgstr ""
+#: brand.php:70 brand.php:126 product.php:158
+msgid "Not Available"
+msgstr "غير متوفر"
 
-#: brand.php:78 brand.php:136 brand.php:163
-msgid "Fermer"
-msgstr "فرمر"
+#: brand.php:78 brand.php:136 brand.php:163 categories.php:77
+#: categories.php:132 categories.php:158 product.php:165 product.php:232
+#: product.php:336 user.php:154 user.php:221 user.php:303
+msgid "Close"
+msgstr "إغلاق"
 
-#: brand.php:80 brand.php:138
-msgid "Enregistrer les changements"
-msgstr ""
+#: brand.php:80 brand.php:138 brand.php:164 categories.php:79
+#: categories.php:159 product.php:167
+msgid "Save change"
+msgstr "حفظ التغيير"
 
 #: brand.php:100
-msgid "Modifier la marque"
-msgstr ""
+msgid "Change the brand"
+msgstr "تغيير العلامة التجارية"
 
 #: brand.php:108
-msgid "Chargement"
-msgstr ""
+msgid "Loading ..."
+msgstr "تحميل …"
 
 #: brand.php:113
-msgid "Nom de marque"
-msgstr ""
+msgid "Brand name"
+msgstr "اسم العلامة التجارية"
 
 #: brand.php:157
-msgid "Supprimer la Marque"
-msgstr ""
+msgid "Delete the brand"
+msgstr "حذف العلامة التجارية"
 
-#: brand.php:160
-msgid "Voulez-vous vraiment supprimer ?"
-msgstr ""
+#: brand.php:160 categories.php:155 product.php:369
+msgid "Are you sure you want to delete?"
+msgstr "هل تريد حذف؟"
 
-#: brand.php:164
-msgid "Sauvegarder les modifications"
-msgstr ""
+#: categories.php:10 includes/header.php:87 product.php:33
+msgid "Category"
+msgstr "فئة"
+
+#: categories.php:15
+msgid "Category Management"
+msgstr "إدارة الفئات"
+
+#: categories.php:22
+msgid "Add a Category"
+msgstr "إضافة فئة"
+
+#: categories.php:28
+msgid "The names of Categorys"
+msgstr "أسماء فئات"
+
+#: categories.php:50
+msgid "Add a category"
+msgstr "إضافة فئة"
+
+#: categories.php:57
+msgid "The name of the Category:"
+msgstr "اسم الفئة:"
+
+#: categories.php:70 categories.php:122 product.php:330 user.php:147
+#: user.php:297
+msgid "InAvailable"
+msgstr "غير متوفر"
+
+#: categories.php:96
+msgid "Edit the Category"
+msgstr "تصحيح فئة"
+
+#: categories.php:104 product.php:189 user.php:178
+msgid "Loading..."
+msgstr "تحميل …"
+
+#: categories.php:109
+msgid "Nam of the category:"
+msgstr "اسم فئة:"
+
+#: categories.php:134
+msgid "Save"
+msgstr "حفظ"
+
+#: categories.php:152
+msgid "Remove the Category"
+msgstr "إزالة فئة"
 
 #: dashboard.php:45
 msgid "Total products"
@@ -114,7 +166,7 @@ msgstr "عدد انقراض المنتجات"
 
 #: dashboard.php:103
 msgid "Total income in "
-msgstr "Totale des revenue en"
+msgstr "مجموع الإيرادات في"
 
 #: dashboard.php:103 dashboard.php:150
 msgid "$"
@@ -144,7 +196,7 @@ msgstr "إنشاء تذكره"
 msgid "Product Name"
 msgstr "اسم المنتج"
 
-#: dashboard.php:136
+#: dashboard.php:136 product.php:31
 msgid "Quantity"
 msgstr "كمية"
 
@@ -156,15 +208,11 @@ msgstr "P.U"
 msgid "Total"
 msgstr "مجموع"
 
-#: includes/header.php:10
+#: includes/header.php:9
 msgid "Management System"
 msgstr "نظام الاداره"
 
-#: includes/header.php:85
-msgid "Category"
-msgstr "فئة"
-
-#: includes/header.php:87
+#: includes/header.php:88 product.php:9
 msgid "Product"
 msgstr "المنتج"
 
@@ -177,8 +225,8 @@ msgid "New Order"
 msgstr "طلب جديد"
 
 #: includes/header.php:93
-msgid "Liste des commandes"
-msgstr ""
+msgid "Ordered list"
+msgstr "قائمة ‫طلبات"
 
 #: includes/header.php:98
 msgid "Restaurant"
@@ -243,6 +291,167 @@ msgstr "كلمه السر"
 #: index.php:116
 msgid "Sign in"
 msgstr "تسجيل الدخول"
+
+#: product.php:14
+msgid "Manage Product"
+msgstr "إدارة المنتج"
+
+#: product.php:21 product.php:55
+msgid "Add product"
+msgstr "أضافه منتج"
+
+#: product.php:27 product.php:196 user.php:28 user.php:185
+msgid "Photo"
+msgstr "الصور"
+
+#: product.php:28
+msgid "Name of product"
+msgstr "اسم المنتج"
+
+#: product.php:29 product.php:83
+msgid "Barcode"
+msgstr "الباركود"
+
+#: product.php:30
+msgid "Price"
+msgstr "السعر"
+
+#: product.php:34 user.php:33 user.php:141 user.php:291
+msgid "Statut"
+msgstr "الحالة"
+
+#: product.php:63 product.php:211
+msgid "Picture of product:"
+msgstr "صورة المنتج:"
+
+#: product.php:76 product.php:248
+msgid "Name of product:"
+msgstr "اسم المنتج:"
+
+#: product.php:90 product.php:264
+msgid "Quantity:"
+msgstr "كمية:"
+
+#: product.php:98 product.php:271
+msgid "Purchase price:"
+msgstr "سعر الشراء:"
+
+#: product.php:105 product.php:278
+msgid "Selling price:"
+msgstr "سعر البيع:"
+
+#: product.php:114
+msgid "Brand Name:"
+msgstr "اسم العلامة التجارية:"
+
+#: product.php:133
+msgid "Category Name:"
+msgstr "اسم الفئة:"
+
+#: product.php:183
+msgid "Edit Product"
+msgstr "تحرير المنتج"
+
+#: product.php:197
+msgid " Product info"
+msgstr "معلومات المنتج"
+
+#: product.php:219
+msgid "Select Picture:"
+msgstr "تحديد صورة:"
+
+#: product.php:256
+msgid "Bar code:"
+msgstr "رمز الشريط:"
+
+#: product.php:305
+msgid "Name of Category:"
+msgstr "اسم الفئة:"
+
+#: product.php:309
+msgid "SELECT"
+msgstr "إختر"
+
+#: product.php:324
+msgid "Statut:"
+msgstr "الحالة:"
+
+#: product.php:338 product.php:373
+msgid "Save modification"
+msgstr "حفظ التعديل"
+
+#: product.php:363 user.php:330
+msgid "remove Product"
+msgstr "إزالة المنتج"
+
+#: user.php:9
+msgid "Settings"
+msgstr "إعدادات"
+
+#: user.php:10 user.php:15
+msgid "User"
+msgstr "مستخدم"
+
+#: user.php:22
+msgid "Add user"
+msgstr "إضافة مستخدم"
+
+#: user.php:29 user.php:237
+msgid "Name of collaborator"
+msgstr "اسم المتعاون"
+
+#: user.php:30 user.php:245
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+#: user.php:31
+msgid "Profil"
+msgstr "تشكيل جانبي"
+
+#: user.php:122 user.php:272
+msgid "Name of the option"
+msgstr "اسم فئة"
+
+#: user.php:156 user.php:305 user.php:340
+msgid "Save changes"
+msgstr "حفظ التغيير"
+
+#: user.php:172
+msgid "Edit user"
+msgstr "إضافة مستخدم"
+
+#: user.php:186
+msgid "User Info"
+msgstr "معلومات المستخدم"
+
+#: user.php:200
+msgid "User picture:"
+msgstr "صورة المستخدم:"
+
+#: user.php:208
+msgid "Select Photo:"
+msgstr "حدد الصورة:"
+
+#: user.php:253
+msgid "Profile name"
+msgstr "اسم الملف الشخصي"
+
+#: user.php:336
+msgid "Do you really want to delete?"
+msgstr "هل تريد حذف؟"
+
+#, fuzzy
+#~| msgid "Ajouter une marque"
+#~ msgid "Ajouter un utilisateur"
+#~ msgstr "أجووتر أوني مارك"
+
+#, fuzzy
+#~| msgid "Parameter"
+#~ msgid "Paramètres"
+#~ msgstr "المعلمه"
+
+#~ msgid "Fermer"
+#~ msgstr "فرمر"
 
 #~ msgid "Totale des revenue en DH"
 #~ msgstr "Totale des revenue en DH"

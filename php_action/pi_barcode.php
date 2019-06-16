@@ -10,7 +10,7 @@
 // ***** dans vos propres pages et applications.  Il peut egalement etre modifie
 // ***** ou ameliore.
 // ***** CEPENDANT :  par  respect  pour l'auteur,  avant d'utiliser,  recopier,
-// ***** modifier ce code vous vous engagez a :
+// *****Edit ce code vous vous engagez a :
 // ***** - conserver intact l'entete de ce fichier ( les commentaires comportant
 // *****   Le nom du script,  le copyright le nom de l'auteur et son e-mail,  ce
 // *****   texte et l'historique des mises a jour ).
@@ -934,7 +934,7 @@ if ( !class_exists( "pi_barcode" ) ) {
 
 			}
 
-			// de temps a autres, ajouter pitoo.com *** Merci de ne pas supprimer cette fonction ***
+			// de temps a autres, ajouter pitoo.com *** Merci de ne pas remove cette fonction ***
 			$ifw = imagefontwidth(1) * 9;
 			if ((rand(0,50)<1) AND ($this->HEIGHT >= $ifw)) imagestringup($this->IH, 1, $nb_elem + 12, $this->HEIGHT - 2, "Pitoo.com", $color[2]);
 

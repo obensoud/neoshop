@@ -10,8 +10,8 @@ $('#barcodeScanner').keyup(function(e) {
 			data: {barCodeScannerVal : valueOfBarreCode},
 			dataType: 'json',
 			success:function(response) {
-          //console.log('response: '+response);
-          $('#ListDesProduit').append("<tr id=\"row"+nemberOfRow+"\"> </th> <td class=\"product_name\" style=\"font-size:14px\;\" > "+response.product_name+" </td> <td><input id=\"number"+nemberOfRow+"\" type=\"number\" step=\"1\"  onchange=\"myCalcule()\" class= \"form-control price\" value = \"1\" min=\"1\" max=\"99\"></td>  <td id=\"rate"+nemberOfRow+"\" class=\"rate\">"+response.salePrice+"</td> <td class=\"totalrate\" id=\"total"+nemberOfRow+"\">"+response.rate+"</td> <td> <button class=\"btn btn-default removeProductRowBtn removeProductRowBtntable\" type=\"button\" id=\"removeProductRowBtn\" onclick=\"removeProductRow("+nemberOfRow+")\"><i class=\"glyphicon glyphicon-trash\"> </i> </button> </td> </tr>");
+          console.log('response: '+response.product_name);
+          $('#tableReceipt').append("<tr id=\"row"+nemberOfRow+"\"> </th> <td class=\"product_name\" style=\"font-size:14px\;\" > "+response.product_name+" </td> <td><input id=\"number"+nemberOfRow+"\" type=\"number\" step=\"1\"  onchange=\"myCalcule()\" class= \"form-control price\" value = \"1\" min=\"1\" max=\"99\"></td>  <td id=\"rate"+nemberOfRow+"\" class=\"rate\">"+response.salePrice+"</td> <td class=\"totalrate\" id=\"total"+nemberOfRow+"\">"+response.rate+"</td> <td> <button class=\"btn btn-default removeProductRowBtn removeProductRowBtntable\" type=\"button\" id=\"removeProductRowBtn\" onclick=\"removeProductRow("+nemberOfRow+")\"><i class=\"glyphicon glyphicon-trash\"> </i> </button> </td> </tr>");
           ++nemberOfRow;
           ++nemberOfALLRow;
           myCalcule();
@@ -60,6 +60,7 @@ function myCalcule() {
   Totalreceipt =Totalreceipt.toFixed(2);
   //Totalreceipt = Totalreceipt + Totalreceipt * 0.2; //Calcule de TVA
   $('#Totalreceipt').html(Totalreceipt);
+  console.log('Totalreceipt: '+Totalreceipt);
 }
 
 function removeProductRow(row = null) {

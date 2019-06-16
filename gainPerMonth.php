@@ -57,7 +57,7 @@
 				<div class="panel-heading">
 					
 					<a href="product.php" style="text-decoration:none;color:black;">
-						Totale des produits
+						Totale des Products
 						<span class="badge pull pull-right"><?php echo $countProduct; ?></span>	
 					</a>
 					
@@ -81,7 +81,7 @@
 			<div class="panel panel-danger">
 				<div class="panel-heading">
 					<a href="lowStock.php" style="text-decoration:none;color:black;">
-						Nombre d'extinction de produit
+						Nombre d'extinction de Product
 						<span class="badge pull pull-right"><?php echo $countLowStock; ?></span>	
 					</a>
 					

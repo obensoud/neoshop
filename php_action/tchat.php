@@ -12,7 +12,7 @@
     </button>
     <ul class="dropdown-menu pull-right" role="menu">
         <li><a data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-plus"></span> Nouveau</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-remove"></span> Tout fermer</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-remove"></span> Tout Close</a></li>
         <li class="divider"></li>
         <li><a href="#"><span class="glyphicon glyphicon-eye-close"></span> invisible</a></li>
     </ul>

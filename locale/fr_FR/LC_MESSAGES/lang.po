@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Neoshop\n"
-"POT-Creation-Date: 2019-06-08 11:38+0200\n"
-"PO-Revision-Date: 2019-06-08 11:57+0200\n"
+"POT-Creation-Date: 2019-06-15 16:23+0200\n"
+"PO-Revision-Date: 2019-06-15 16:28+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -22,83 +22,132 @@ msgid "'"
 msgstr ""
 
 #: barcode.php:7 brand.php:11 categories.php:9 groupOptionUser.php:8
-#: includes/header.php:81 myInf.php:12 optionuser.php:8 orders.php:18
+#: includes/header.php:85 myInf.php:12 optionuser.php:8 orders.php:18
 #: product.php:8 profiluser.php:8 setting.php:14 user.php:8
 msgid "Home"
 msgstr "Accueil"
 
-#: brand.php:12 includes/header.php:83 lowStock.php:32 lowStock.php:106
-#: lowStock.php:272 product.php:32 product.php:114 product.php:286
+#: brand.php:12 includes/header.php:86 lowStock.php:32 lowStock.php:106
+#: lowStock.php:272 product.php:32 product.php:286
 msgid "Brand"
 msgstr "﻿Marque"
 
 #: brand.php:17
-msgid "Géstion des Marques"
-msgstr ""
+msgid "Brand Management"
+msgstr "Gestion de la marque"
 
 #: brand.php:24 brand.php:50
-msgid "Ajouter une marque"
-msgstr ""
+msgid "Add brand"
+msgstr "Ajouter une marque"
 
-#: brand.php:30
-msgid "Le nom des marques"
-msgstr ""
+#: brand.php:30 brand.php:57
+msgid "Name of brand"
+msgstr "Nom de la marque"
 
-#: brand.php:31
+#: brand.php:31 categories.php:29
 msgid "Status"
-msgstr ""
+msgstr "Statut"
 
-#: brand.php:32
+#: brand.php:32 categories.php:30 product.php:35 user.php:32 user.php:34
 msgid "Options"
-msgstr ""
+msgstr "Options"
 
-#: brand.php:57
-msgid "Nom de la marque"
-msgstr ""
+#: brand.php:64 brand.php:120 categories.php:116
+msgid "Status:"
+msgstr "Statut :"
 
-#: brand.php:68 brand.php:124
-msgid "Sélectionner"
-msgstr ""
+#: brand.php:68 brand.php:124 categories.php:68 categories.php:120
+#: product.php:118 user.php:126 user.php:145 user.php:257 user.php:276
+#: user.php:295
+msgid "Select"
+msgstr "Sélectionner"
 
-#: brand.php:69 brand.php:125
-msgid "Disponible"
-msgstr ""
+#: brand.php:69 brand.php:125 categories.php:69 categories.php:121 user.php:146
+#: user.php:296
+msgid "Available"
+msgstr "Disponible"
 
 #: brand.php:70 brand.php:126
-msgid "Non Disponible"
-msgstr ""
+msgid "Not Available"
+msgstr "Non disponible"
 
-#: brand.php:78 brand.php:136 brand.php:163
-msgid "Fermer"
-msgstr ""
+#: brand.php:78 brand.php:136 brand.php:163 categories.php:77
+#: categories.php:132 categories.php:158 user.php:154 user.php:221 user.php:303
+msgid "Close"
+msgstr "Fermer"
 
-#: brand.php:80 brand.php:138
-msgid "Enregistrer les changements"
-msgstr ""
+#: brand.php:80 brand.php:138 brand.php:164 categories.php:79
+#: categories.php:159
+msgid "Save change"
+msgstr "Enregistrer la modification"
 
 #: brand.php:100
-msgid "Modifier la marque"
-msgstr ""
+msgid "Change the brand"
+msgstr "Changer de marque"
 
 #: brand.php:108
-msgid "Chargement"
-msgstr ""
+msgid "Loading ..."
+msgstr "Chargement …"
 
 #: brand.php:113
-msgid "Nom de marque"
-msgstr ""
+msgid "Brand name"
+msgstr "Marque"
 
 #: brand.php:157
-msgid "Supprimer la Marque"
-msgstr ""
+msgid "Delete the brand"
+msgstr "Supprimer la marque"
 
-#: brand.php:160
-msgid "Voulez-vous vraiment supprimer ?"
-msgstr ""
+#: brand.php:160 categories.php:155
+msgid "Are you sure you want to delete?"
+msgstr "Etes-vous sûr de vouloir supprimer?"
 
-#: brand.php:164
-msgid "Sauvegarder les modifications"
-msgstr ""
+#: categories.php:10 includes/header.php:87 product.php:33
+msgid "Category"
+msgstr "Catégorie"
+
+#: categories.php:15
+msgid "Category Management"
+msgstr "Gestion des catégories"
+
+#: categories.php:22
+msgid "Add a Category"
+msgstr "Ajouter une catégorie"
+
+#: categories.php:28
+msgid "The names of Categorys"
+msgstr "Les noms des catégories"
+
+#: categories.php:50
+msgid "Add a category"
+msgstr "Ajouter une catégorie"
+
+#: categories.php:57
+msgid "The name of the Category:"
+msgstr "Le nom de la catégorie:"
+
+#: categories.php:70 categories.php:122 user.php:147 user.php:297
+msgid "InAvailable"
+msgstr "Indisponible"
+
+#: categories.php:96
+msgid "Edit the Category"
+msgstr "Modifier la catégorie"
+
+#: categories.php:104 user.php:178
+msgid "Loading..."
+msgstr "Chargement..."
+
+#: categories.php:109
+msgid "Nam of the category:"
+msgstr "Name de la catégorie:"
+
+#: categories.php:134
+msgid "Save"
+msgstr "Sauvegarder"
+
+#: categories.php:152
+msgid "Remove the Category"
+msgstr "Supprimer la catégorie"
 
 #: dashboard.php:45
 msgid "Total products"
@@ -144,7 +193,7 @@ msgstr "Créer un ticket"
 msgid "Product Name"
 msgstr "Nom du produit"
 
-#: dashboard.php:136
+#: dashboard.php:136 product.php:31
 msgid "Quantity"
 msgstr "Quantité"
 
@@ -156,15 +205,11 @@ msgstr "P.U"
 msgid "Total"
 msgstr "Total"
 
-#: includes/header.php:10
+#: includes/header.php:9
 msgid "Management System"
 msgstr "Système de gestion"
 
-#: includes/header.php:85
-msgid "Category"
-msgstr "Catégorie"
-
-#: includes/header.php:87
+#: includes/header.php:88 product.php:9
 msgid "Product"
 msgstr "Produit"
 
@@ -177,8 +222,8 @@ msgid "New Order"
 msgstr "Nouvelle commande"
 
 #: includes/header.php:93
-msgid "Liste des commandes"
-msgstr ""
+msgid "Ordered list"
+msgstr "Liste des commandes"
 
 #: includes/header.php:98
 msgid "Restaurant"
@@ -243,6 +288,121 @@ msgstr "Mot de passe"
 #: index.php:116
 msgid "Sign in"
 msgstr "Se connecter"
+
+#: product.php:14
+msgid "Manage Product"
+msgstr "Gérer les produits"
+
+#: product.php:21 product.php:55
+msgid "Add product"
+msgstr "Ajouter un produit"
+
+#: product.php:27 user.php:28 user.php:185
+msgid "Photo"
+msgstr "Photo"
+
+#: product.php:28
+msgid "Name of product"
+msgstr "Nom du produit"
+
+#: product.php:29 product.php:83
+msgid "Barcode"
+msgstr "Code barre"
+
+#: product.php:30
+msgid "Price"
+msgstr "Prix"
+
+#: product.php:34 user.php:33 user.php:141 user.php:291
+msgid "Statut"
+msgstr "Statut"
+
+#: product.php:63
+msgid "Picture of product:"
+msgstr "Photo du produit:"
+
+#: product.php:76
+msgid "Name of product:"
+msgstr "Nom du produit:"
+
+#: product.php:90
+msgid "Quantity:"
+msgstr "Quantité :"
+
+#: product.php:98
+msgid "Purchase price:"
+msgstr "Prix d’achat:"
+
+#: product.php:105
+msgid "Selling price:"
+msgstr "Prix de vente:"
+
+#: product.php:114
+msgid "Brand Name:"
+msgstr "Nom de la marque:"
+
+#: user.php:9
+msgid "Settings"
+msgstr "Paramètres"
+
+#: user.php:10 user.php:15
+msgid "User"
+msgstr "Utilisateur"
+
+#: user.php:22
+msgid "Add user"
+msgstr "Ajouter un utilisateur"
+
+#: user.php:29 user.php:237
+msgid "Name of collaborator"
+msgstr "Nom du collaborateur"
+
+#: user.php:30 user.php:245
+msgid "Email"
+msgstr "E-mail"
+
+#: user.php:31
+msgid "Profil"
+msgstr "Profil"
+
+#: user.php:122 user.php:272
+msgid "Name of the option"
+msgstr "Nom de l'option"
+
+#: user.php:156 user.php:305 user.php:340
+msgid "Save changes"
+msgstr "Enregistrer les changements"
+
+#: user.php:172
+msgid "Edit user"
+msgstr "Editer l'utilisateur"
+
+#: user.php:186
+msgid "User Info"
+msgstr "Informations Utilisateur"
+
+#: user.php:200
+msgid "User picture:"
+msgstr "Image de l'utilisateur:"
+
+#: user.php:208
+msgid "Select Photo:"
+msgstr "Sélectionnez la photo:"
+
+#: user.php:253
+msgid "Profile name"
+msgstr "Nom du profil"
+
+#: user.php:330
+msgid "remove Product"
+msgstr "retirer le produit"
+
+#: user.php:336
+msgid "Do you really want to delete?"
+msgstr "Voulez-vous vraiment supprimer?"
+
+#~ msgid "Géstion des Marques"
+#~ msgstr "Géstion des marques"
 
 #~ msgid "Totale des revenue en DH"
 #~ msgstr "Totale des revenue en DH"

@@ -90,10 +90,10 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="glyphicon glyphicon-shopping-cart"></i>&nbsp;&nbsp;<?php echo tr("Order")?> <span class="caret"></span></a>
             <ul class="dropdown-menu">            
               <li id="topNavAddOrder"><a href="orders.php?o=add"> <i class="glyphicon glyphicon-plus"></i>&nbsp;&nbsp;<?php echo tr("New Order")?> </a></li>            
-              <li id="topNavManageOrder"><a href="orders.php?o=manord"> <i class="glyphicon glyphicon-edit"></i>&nbsp;&nbsp;<?php echo tr("Liste des commandes")?></a></li>            
+              <li id="topNavManageOrder"><a href="orders.php?o=manord"> <i class="glyphicon glyphicon-edit"></i>&nbsp;&nbsp;<?php echo tr("Ordered list")?></a></li>            
             </ul>
           </li>       
-          <li class="dropdown" id="navRestaurant">
+          <li class="dropdown hidden" id="navRestaurant">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> 
               <i class="glyphicon glyphicon-registration-mark"></i> <?php echo tr("Restaurant")?> <span class="caret"></span>
             </a>
@@ -130,7 +130,7 @@
           <li class="dropdown" id="navSetting">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
               <i class="glyphicon glyphicon-user"></i>
-              &nbsp;&nbsp;<?php echo tr("Hello")?> <?php echo $_SESSION['username'];?>
+              &nbsp;&nbsp;<?php echo tr("Hello")?> <?php echo $_SESSION['username']?>
               <span class="caret"></span>
             </a>
             <ul class="dropdown-menu">            
