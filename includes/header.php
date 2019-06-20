@@ -1,6 +1,6 @@
 <?php 
   require_once 'php_action/core.php'; 
-  require_once 'php_action/userCounter.php'; 
+  require 'php_action/userCounter.php'; 
   require_once 'php_action/localisation.php';
 ?>
 <!DOCTYPE html>

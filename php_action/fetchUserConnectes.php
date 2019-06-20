@@ -1,6 +1,9 @@
 <?php 
     require_once 'core.php';    
-    $sql_query = "SELECT pseudo,ip FROM connectes WHERE pseudo <> ''";
+    $usename=$_SESSION['username'];
+    error_log("@@@usename: ".$usename );
+    $sql_query = "SELECT pseudo,ip FROM connectes WHERE pseudo <> '' and pseudo <> '$usename'";
+    error_log("@@@sql_query: ".$sql_query );
     $result = $connect->query($sql_query);
     $output = array('data' => array());
     $users ="";

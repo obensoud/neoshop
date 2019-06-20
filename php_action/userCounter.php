@@ -14,7 +14,7 @@
     $sessionId =session_id();
     // pseudo
     $user_id = $_SESSION['userId'];
-    error_log("@@User Id: ".$_SESSION['userId'] );
+    error_log("@@@User Id: ".$_SESSION['userId'] );
     $sql = "SELECT * FROM users WHERE user_id = {$user_id}";
     $query = $connect->query($sql);
     $result = $query->fetch_assoc();
@@ -28,10 +28,7 @@
     if($result->fetch_array() == 0){
         $sql_query = "INSERT INTO connectes VALUES ('$sessionId','$ip', '$time', '$pseudo')";
         $result = $connect->query($sql_query);
-    }
-    // mise-à-jour
-    else
-    {
+    }else { // mise-à-jour
         $sql1="UPDATE connectes SET derniere='$time',pseudo='$pseudo', ip='$ip' WHERE session_id='$sessionId'";      
         $result = $connect->query($sql1);
     }
@@ -54,10 +51,7 @@
     if($result->fetch_array() == 0){
         $sql_query = "INSERT INTO connectes VALUES ('$sessionId','$ip', '$time', '$pseudo')";
         $result = $connect->query($sql_query);
-    }
-    // mise-à-jour
-    else
-    {
+    }else { // mise-à-jour
         $sql1="UPDATE connectes SET derniere='$time',pseudo='$pseudo', ip='$ip' WHERE session_id='$sessionId'";      
         $result = $connect->query($sql1);
     }
