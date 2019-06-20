@@ -5,8 +5,8 @@
 	<div class="col-md-12">
 
 		<ol class="breadcrumb">
-			<li><a href="dashboard.php"><?php echo tr("Home")?></a></li>		  
-			<li><a href="setting.php">Paramètres</a></li>
+			<li><a href="dashboard.php?lang=<?php echo $_SESSION['language'] ?>"><?php echo tr("Home")?></a></li>		  
+			<li><a href="setting.php?lang=<?php echo $_SESSION['language'] ?>">Paramètres</a></li>
 			<li class="active">Profil utilisateur</li>
 		</ol>
 

@@ -11,7 +11,7 @@ $connect->close();
 <div class="row">
 	<div class="col-md-12">
 		<ol class="breadcrumb">
-			<li><a href="dashboard.php"><?php echo tr("Home")?></a></li>		  
+			<li><a href="dashboard.php?lang=<?php echo $_SESSION['language'] ?>"><?php echo tr("Home")?></a></li>		  
 			<li class="active">Paramètres</li>
 		</ol>
 
@@ -24,7 +24,7 @@ $connect->close();
 				<div class="col-md-4"  >
 					<div class="panel panel-success">
 						<div class="panel-heading">
-							<a href="profiluser.php" style="text-decoration:none;color:black;">
+							<a href="profiluser.php?lang=<?php echo $_SESSION['language'] ?>" style="text-decoration:none;color:black;">
 								<span class="glyphicon glyphicon-tower"></span> 
 								Créer un profil
 							</a>
@@ -35,7 +35,7 @@ $connect->close();
 				<div class="col-md-4">
 					<div class="panel panel-info">
 						<div class="panel-heading">
-							<a href="optionuser.php" style="text-decoration:none;color:black;">
+							<a href="optionuser.php?lang=<?php echo $_SESSION['language'] ?>" style="text-decoration:none;color:black;">
 								<span class="glyphicon glyphicon-stats"></span> 
 								Créer des options
 							</a>
@@ -45,7 +45,7 @@ $connect->close();
 				<div class="col-md-4">
 					<div class="panel panel-default">
 						<div class="panel-heading">
-							<a href="groupOptionUser.php" style="text-decoration:none;color:black;">
+							<a href="groupOptionUser.php?lang=<?php echo $_SESSION['language'] ?>" style="text-decoration:none;color:black;">
 								<span class="glyphicon glyphicon-folder-open"></span> 
 								Créer un groupe d'options
 							</a>
@@ -55,7 +55,7 @@ $connect->close();
 				<div class="col-md-4">
 					<div class="panel panel-danger">
 						<div class="panel-heading">
-							<a href="user.php" style="text-decoration:none;color:black;">
+							<a href="user.php?lang=<?php echo $_SESSION['language'] ?>" style="text-decoration:none;color:black;">
 								<span class="glyphicon glyphicon-user"></span> 
 								Tous les utilisateurs
 							</a>
@@ -66,7 +66,7 @@ $connect->close();
 				<div class="col-md-4">
 					<div class="panel panel-warning">
 						<div class="panel-heading">
-							<a href="myInf.php" style="text-decoration:none;color:black;">
+							<a href="myInf.php?lang=<?php echo $_SESSION['language'] ?>" style="text-decoration:none;color:black;">
 								<span class="glyphicon glyphicon-info-sign"></span> 
 								Mes informations
 

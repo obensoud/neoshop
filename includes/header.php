@@ -82,15 +82,15 @@
          <a class="navbar-brand" href="http://disputebills.com"><img style="  width: 34px;" src="https://res.cloudinary.com/disputebills/image/upload/v1462474206/blue-mark_cnzgry.png" alt="Dispute Bills"><h4 style="font-family:Snell Roundhand, cursive">&nbsp;L.B.K</h4>
         </a>
         <ul class="nav navbar-nav navbar-right">        
-        	<li id="navDashboard"><a href="index.php"><i class="glyphicon glyphicon-list-alt"></i>&nbsp;&nbsp;<?php echo tr("Home")?></a></li>
-          <li id="navBrand"><a href="brand.php"><i class="glyphicon glyphicon-btc"></i>&nbsp;&nbsp;<?php echo tr("Brand")?></a></li>    
-          <li id="navCategories"><a href="categories.php"> <i class="glyphicon glyphicon-th-list"></i>&nbsp;&nbsp;<?php echo tr("Category")?></a></li>        
-          <li id="navProduct"><a href="product.php"> <i class="glyphicon glyphicon-ruble"></i>&nbsp;&nbsp;<?php echo tr("Product")?> </a></li>     
+        	<li id="navDashboard"><a href="dashboard.php?lang=<?php echo $_SESSION['language'] ?>"><i class="glyphicon glyphicon-list-alt"></i>&nbsp;&nbsp;<?php echo tr("Home")?></a></li>
+          <li id="navBrand"><a href="brand.php?lang=<?php echo $_SESSION['language'] ?>"><i class="glyphicon glyphicon-btc"></i>&nbsp;&nbsp;<?php echo tr("Brand")?></a></li>    
+          <li id="navCategories"><a href="categories.php?lang=<?php echo $_SESSION['language'] ?>"> <i class="glyphicon glyphicon-th-list"></i>&nbsp;&nbsp;<?php echo tr("Category")?></a></li>        
+          <li id="navProduct"><a href="product.php?lang=<?php echo $_SESSION['language'] ?>"> <i class="glyphicon glyphicon-ruble"></i>&nbsp;&nbsp;<?php echo tr("Product")?> </a></li>     
           <li class="dropdown" id="navOrder">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="glyphicon glyphicon-shopping-cart"></i>&nbsp;&nbsp;<?php echo tr("Order")?> <span class="caret"></span></a>
             <ul class="dropdown-menu">            
-              <li id="topNavAddOrder"><a href="orders.php?o=add"> <i class="glyphicon glyphicon-plus"></i>&nbsp;&nbsp;<?php echo tr("New Order")?> </a></li>            
-              <li id="topNavManageOrder"><a href="orders.php?o=manord"> <i class="glyphicon glyphicon-edit"></i>&nbsp;&nbsp;<?php echo tr("Ordered list")?></a></li>            
+              <li id="topNavAddOrder"><a href="orders.php?lang=<?php echo $_SESSION['language'] ?>&o=add"> <i class="glyphicon glyphicon-plus"></i>&nbsp;&nbsp;<?php echo tr("New Order")?> </a></li>            
+              <li id="topNavManageOrder"><a href="orders.php?lang=<?php echo $_SESSION['language'] ?>&o=manord"> <i class="glyphicon glyphicon-edit"></i>&nbsp;&nbsp;<?php echo tr("Ordered list")?></a></li>            
             </ul>
           </li>       
           <li class="dropdown hidden" id="navRestaurant">
@@ -99,16 +99,16 @@
             </a>
             <ul class="dropdown-menu">            
                 <li id="topNavAddMenu">
-                  <a href="restaurant.php?o=addMenu"> <i class="glyphicon glyphicon-plus"></i><?php echo tr("Add Menu")?></a>
+                  <a href="restaurant.php?lang=<?php echo $_SESSION['language'] ?>&o=addMenu"> <i class="glyphicon glyphicon-plus"></i><?php echo tr("Add Menu")?></a>
                 </li>  
                 <li id="topNavManageBar">
-                  <a href="restaurant.php?o=manBar"> <i class="glyphicon glyphicon-glass"></i><?php echo tr("Bar")?> </a>
+                  <a href="restaurant.php?lang=<?php echo $_SESSION['language'] ?>&o=manBar"> <i class="glyphicon glyphicon-glass"></i><?php echo tr("Bar")?> </a>
                 </li>
                 <li id="topNavManageKitchen">
-                  <a href="restaurant.php?o=manKitchen"> <i class="glyphicon glyphicon-cutlery"></i><?php echo tr("Kitchen")?></a>
+                  <a href="restaurant.php?lang=<?php echo $_SESSION['language'] ?>&o=manKitchen"> <i class="glyphicon glyphicon-cutlery"></i><?php echo tr("Kitchen")?></a>
                 </li> 
                 <li id="topNavManageOrderReady">
-                  <a href="restaurant.php?o=manOrderReady"><i class="glyphicon glyphicon-check"></i><?php echo tr("Order Ready")?> </a>
+                  <a href="restaurant.php?lang=<?php echo $_SESSION['language'] ?>&o=manOrderReady"><i class="glyphicon glyphicon-check"></i><?php echo tr("Order Ready")?> </a>
                 </li>
             </ul>
           </li>
@@ -118,15 +118,15 @@
             </a>
             <ul class="dropdown-menu">            
                 <li id="GenererUnRapportDeVente">
-                  <a href="report.php"> <i class="glyphicon glyphicon glyphicon-tasks"></i>&nbsp;&nbsp;<?php echo tr("Sales report")?></a>
+                  <a href="report.php?lang=<?php echo $_SESSION['language'] ?>"> <i class="glyphicon glyphicon glyphicon-tasks"></i>&nbsp;&nbsp;<?php echo tr("Sales report")?></a>
                 </li>  
                 <li id="GrapheAnalyse">
-                  <a href="gainPerMonth.php"> <i class="glyphicon glyphicon glyphicon-blackboard"></i>&nbsp;&nbsp;<?php echo tr("Analysis with graph")?> </a>
+                  <a href="gainPerMonth.php?lang=<?php echo $_SESSION['language'] ?>"> <i class="glyphicon glyphicon glyphicon-blackboard"></i>&nbsp;&nbsp;<?php echo tr("Analysis with graph")?> </a>
                 </li>
             </ul>
           </li>
           <li id="barcode">
-            <a href="barcode.php"> <i class="glyphicon glyphicon-barcode"></i>&nbsp;&nbsp;<?php echo tr("Bar code")?></a></li>
+            <a href="barcode.php?lang=<?php echo $_SESSION['language'] ?>"> <i class="glyphicon glyphicon-barcode"></i>&nbsp;&nbsp;<?php echo tr("Bar code")?></a></li>
           <li class="dropdown" id="navSetting">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
               <i class="glyphicon glyphicon-user"></i>
@@ -134,8 +134,8 @@
               <span class="caret"></span>
             </a>
             <ul class="dropdown-menu">            
-              <li id="topNavSetting"><a href="setting.php"> <i class="glyphicon glyphicon-wrench"></i>&nbsp;&nbsp;<?php echo tr("Parameter")?></a></li>            
-              <li id="topNavLogout"><a href="logout.php"> <i class="glyphicon glyphicon-log-out"></i>&nbsp;&nbsp;<?php echo tr("Logout")?></a></li>            
+              <li id="topNavSetting"><a href="setting.php?lang=<?php echo $_SESSION['language'] ?>"> <i class="glyphicon glyphicon-wrench"></i>&nbsp;&nbsp;<?php echo tr("Parameter")?></a></li>            
+              <li id="topNavLogout"><a href="logout.php?lang=<?php echo $_SESSION['language'] ?>"> <i class="glyphicon glyphicon-log-out"></i>&nbsp;&nbsp;<?php echo tr("Logout")?></a></li>            
             </ul>
           </li>              
         </ul>

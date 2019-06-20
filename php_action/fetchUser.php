@@ -14,12 +14,10 @@ $sql = "SELECT
 	users.profil_id, 
 	users.user_active, 
 	users.user_status,
-	profil_user.profil_name,
-	option_user.option_name
+	profil_user.profil_name
 FROM 
 	users 
 	INNER JOIN profil_user ON users.profil_id = profil_user.profil_id 
-	INNER JOIN option_user ON users.option_id = option_user.option_id 
 WHERE 
 	users.user_status = 1 ";
 
@@ -54,17 +52,6 @@ if($result->num_rows > 0) {
 	  </ul>
 	</div>';
 
-	// $brandId = $row[3];
-	// $brandSql = "SELECT * FROM brands WHERE brand_id = $brandId";
-	// $brandData = $connect->query($sql);
-	// $brand = "";
-	// while($row = $brandData->fetch_assoc()) {
-	// 	$brand = $row['brand_name'];
-	// }
-
-	$brand = $row[8];
-	$category = $row[10];
-
 	$imageUrl = substr($row[2], 3);
 	$productImage = "<img class='img-round' src='".$imageUrl."' style='height:30px; width:50px;'  />";
 
@@ -76,9 +63,7 @@ if($result->num_rows > 0) {
  		// Email
  		$row[4], 
  		// profil
- 		$row[9],
- 		// option 
- 		$row[10], 		 	
+ 		$row[9], 		 	
  		// active
  		$active,
  		// button

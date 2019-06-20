@@ -9,8 +9,8 @@ $connect->close();
 <div class="row">
 	<div class="col-md-12">
 		<ol class="breadcrumb">
-			<li><a href="dashboard.php"><?php echo tr("Home")?></a></li>	
-			<li><a href="setting.php">Paramètres</a></li>
+			<li><a href="dashboard.php?lang=<?php echo $_SESSION['language'] ?>"><?php echo tr("Home")?></a></li>	
+			<li><a href="setting.php?lang=<?php echo $_SESSION['language'] ?>">Paramètres</a></li>
 			<li class="active">Mes informations</li>
 		</ol>
 		<div class="panel panel-default">
@@ -26,6 +26,28 @@ $connect->close();
 							<label for="username" class="col-sm-2 control-label">Nom d'utilisateur </label>
 							<div class="col-sm-10">
 								<input type="text" class="form-control" id="username" name="username" placeholder="Nom d'utilisateur" value="<?php echo $result['username']; ?>"/>
+							</div>
+							<br/>
+						</div>
+						<div class="form-group">
+							<label for="langue" class="col-sm-2 control-label">langue: </label>
+							<div class="col-sm-10">
+								<select class="form-control" id="langue" name="langue">
+									<option selected >
+										<?php  
+											if($_SESSION['language']=="fr_FR"){
+												echo 'Français';
+											}else if ($_SESSION['language']=="en_USA"){
+												echo 'Anglais';
+											}else if ($_SESSION['language']=="ar_Mo"){
+												echo 'Arabe';
+											}
+										?>
+									</option>
+									<option value="fr_FR" <?php if($_SESSION['language']=="fr_FR"){ echo 'hidden';}?>>Français</option>
+									<option value="en_USA" <?php if($_SESSION['language']=="en_USA"){ echo 'hidden';}?> >Anglais</option>
+									<option value="ar_Mo" <?php if($_SESSION['language']=="ar_Mo"){ echo 'hidden';}?> >Arabe</option>
+								</select>
 							</div>
 						</div>
 						<div class="form-group">

@@ -3,7 +3,7 @@
 <div class="row">
 	<div class="col-md-12">
 	  <ol class="breadcrumb">
-      <li><a href="dashboard.php">Acceuil</a></li>     
+      <li><a href="dashboard.php?lang=<?php echo $_SESSION['language'] ?>">Acceuil</a></li>     
       <li class="active">Rapport de commande</li>
     </ol>
 		<div class="panel panel-default">

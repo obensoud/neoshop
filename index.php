@@ -78,6 +78,9 @@ if($_POST) {
 
   <!-- bootstrap js -->
 	<script src="assests/bootstrap/js/bootstrap.min.js"></script>
+  <!-- language css -->
+	<link rel="stylesheet" href="custom/css/language.css">
+	<script src="custom/js/language.js"></script>
 </head>
 <body>
 	<div class="container">
@@ -130,6 +133,7 @@ if($_POST) {
 		<!-- /row -->
 	</div>
 	<!-- container -->	
+	<?php require_once 'php_action/language.php'; ?>
 </body>
 </html>
 

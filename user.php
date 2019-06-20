@@ -5,8 +5,8 @@
 	<div class="col-md-12">
 
 		<ol class="breadcrumb">
-			<li><a href="dashboard.php"><?php echo tr("Home")?></a></li>		  
-			<li><a href="setting.php"><?php echo tr("Settings")?></a></li>
+			<li><a href="dashboard.php?lang=<?php echo $_SESSION['language'] ?>"><?php echo tr("Home")?></a></li>		  
+			<li><a href="setting.php?lang=<?php echo $_SESSION['language'] ?>"><?php echo tr("Settings")?></a></li>
 			<li class="active"><?php echo tr("User")?></li>
 		</ol>
 
@@ -29,7 +29,6 @@
 							<th><?php echo tr("Name of collaborator")?></th>
 							<th><?php echo tr("Email")?></th>
 							<th><?php echo tr("Profil")?></th>
-							<th><?php echo tr("Options")?></th>
 							<th><?php echo tr("Statut")?></th>
 							<th style="width:15%;"><?php echo tr("Options")?></th>
 						</tr>

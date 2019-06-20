@@ -17,16 +17,16 @@ else if($_GET['o'] == 'manOrderReady') {
 ?>
 
 <ol class="breadcrumb">
-  <li><a href="dashboard.php">Home</a></li>
+  <li><a href="dashboard.php?lang=<?php echo $_SESSION['language'] ?>">Home</a></li>
   <li>Restaurant</li>
   <li class="active">
-  	<?php if($_GET['o'] == 'addMenu') { ?>
+  	<?php if($_GET['o'] == '&addMenu') { ?>
   		Add Menu
-		<?php } else if($_GET['o'] == 'manBar') { ?>
+		<?php } else if($_GET['o'] == '&manBar') { ?>
 			Manage Bar
-		<?php } else if($_GET['o'] == 'manKitchen') { ?>
+		<?php } else if($_GET['o'] == '&manKitchen') { ?>
 			Kitchen
-		<?php } else if($_GET['o'] == 'manOrderReady') { ?>
+		<?php } else if($_GET['o'] == '&manOrderReady') { ?>
 			Order Ready		
 		<?php } // /else manage order ?>
   </li>

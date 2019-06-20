@@ -8,8 +8,10 @@ if($_POST) {
 
 	$username = $_POST['username'];
 	$userId = $_POST['user_id'];
+	$_SESSION['language'] =  $_POST['langue'];
+	$langue =  $_POST['langue'];
 
-	$sql = "UPDATE users SET username = '$username' WHERE user_id = {$userId}";
+	$sql = "UPDATE users SET username = '$username', language = '$langue'  WHERE user_id = {$userId}";
 	if($connect->query($sql) === TRUE) {
 		$valid['success'] = true;
 		$valid['messages'] = "Successfully Update";	
