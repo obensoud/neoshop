@@ -8,7 +8,7 @@ require_once 'php_action/localisation.php';
 	<div class="col-md-12">
 
 		<ol class="breadcrumb">
-		  <li><a href="dashboard.php"><?php echo tr("Home")?></a></li>		  
+		  <li><a href="dashboard.php?lang=<?php echo $_SESSION['language'] ?>"><?php echo tr("Home")?></a></li>		  
 		  <li class="active"><?php echo tr("Brand")?></li>
 		</ol>
 

@@ -4,7 +4,7 @@
       <div  class="col-md-12">
         <div id ='breadcrumbImp'>
           <ol class="breadcrumb">
-            <li><a href="dashboard.php"><?php echo tr("Home")?></a></li>     
+            <li><a href="dashboard.php?lang=<?php echo $_SESSION['language'] ?>"><?php echo tr("Home")?></a></li>     
             <li class="active">Générer le code barre</li>
           </ol>
         </div>
