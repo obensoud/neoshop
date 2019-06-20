@@ -126,8 +126,6 @@ $(document).ready(function() {
 			if(orderDate && clientName && clientContact && paid && discount && paymentType && paymentStatus) {
 				if(validateProduct == true && validateQuantity == true) {
 					// create order button
-					// $("#createOrderBtn").button('loading');
-
 					$.ajax({
 						url : form.attr('action'),
 						type: form.attr('method'),
@@ -295,8 +293,7 @@ $(document).ready(function() {
 			if(orderDate && clientName && clientContact && paid && discount && paymentType && paymentStatus) {
 				if(validateProduct == true && validateQuantity == true) {
 					// create order button
-					// $("#createOrderBtn").button('loading');
-
+					 $("#createOrderBtn").button('loading');
 					$.ajax({
 						url : form.attr('action'),
 						type: form.attr('method'),
@@ -453,6 +450,7 @@ function removeProductRow(row = null) {
 }
 // select on product data Code bar
 function getProductDataCodeBar(row = null) {
+	console.log('in');
 	if(row) {
 		var productId = $("#barcodeScanner"+row).val();		
 		
@@ -469,14 +467,13 @@ function getProductDataCodeBar(row = null) {
 				dataType: 'json',
 				success:function(response) {
 					// setting the rate value into the rate input field
-					
-					$("#rate"+row).val(response.rate);
-					$("#rateValue"+row).val(response.rate);
+					$("#rate"+row).val(response.salePrice);
+					$("#rateValue"+row).val(response.salePrice);
 					$("#barcodeScanner"+row).val(response.barcode);
 					$("#productName"+row).val(response.product_id);
 					$("#quantity"+row).val(1);
 
-					var total = Number(response.rate) * 1;
+					var total = Number(response.salePrice) * 1;
 					total = total.toFixed(2);
 					$("#total"+row).val(total);
 					$("#totalValue"+row).val(total);
@@ -509,12 +506,12 @@ function getProductData(row = null) {
 				success:function(response) {
 					// setting the rate value into the rate input field
 					
-					$("#rate"+row).val(response.rate);
-					$("#rateValue"+row).val(response.rate);
+					$("#rate"+row).val(response.salePrice);
+					$("#rateValue"+row).val(response.salePrice);
 					$("#barcodeScanner"+row).val(response.barcode);
 					$("#quantity"+row).val(1);
 
-					var total = Number(response.rate) * 1;
+					var total = Number(response.salePrice) * 1;
 					total = total.toFixed(2);
 					$("#total"+row).val(total);
 					$("#totalValue"+row).val(total);
