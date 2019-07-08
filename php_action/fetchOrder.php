@@ -1,7 +1,7 @@
 <?php 	
 
 require_once 'core.php';
-
+require_once 'localisationIn.php';
 $sql = "SELECT order_id, order_date, client_name, client_contact, payment_status FROM orders WHERE order_status = 1";
 $result = $connect->query($sql);
 
@@ -28,22 +28,39 @@ if($result->num_rows > 0) {
  	} else { 		
  		$paymentStatus = "<label class='label label-warning'>No Payment</label>";
  	} // /else
-
- 	$button = '<!-- Single button -->
-	<div class="btn-group">
-	  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	    Action <span class="caret"></span>
-	  </button>
-	  <ul class="dropdown-menu">
-	    <li><a href="orders.php?o=editOrd&i='.$orderId.'" id="editOrderModalBtn"> <i class="glyphicon glyphicon-edit"></i> Edit</a></li>
-	    
-	    <li><a type="button" data-toggle="modal" id="paymentOrderModalBtn" data-target="#paymentOrderModal" onclick="paymentOrder('.$orderId.')"> <i class="glyphicon glyphicon-save"></i> Payment</a></li>
-
-	    <li><a type="button" onclick="printOrder('.$orderId.')"> <i class="glyphicon glyphicon-print"></i> Print </a></li>
-	    
-	    <li><a type="button" data-toggle="modal" data-target="#removeOrderModal" id="removeOrderModalBtn" onclick="removeOrder('.$orderId.')"> <i class="glyphicon glyphicon-trash"></i> Remove</a></li>       
-	  </ul>
-	</div>';		
+	$userId = $_SESSION['userId'];
+	$sql = "SELECT profil_id FROM users WHERE user_id = '$userId'";
+	$resultProfil = $connect->query($sql);
+	$rowProfil = $resultProfil->fetch_array();
+	error_log ('profil debug: '.$rowProfil[0]);
+	$button;
+	if($rowProfil[0] == 13 || $rowProfil[0] == 14 ){
+		$button = '<!-- Single button -->
+		<div class="btn-group">
+		  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			Action <span class="caret"></span>
+		  </button>
+		  <ul class="dropdown-menu">
+			<li><a href="orders.php?o=editOrd&i='.$orderId.'" id="editOrderModalBtn"> <i class="glyphicon glyphicon-edit"></i> '.tr("Edit").'</a></li>
+			
+			<li><a type="button" data-toggle="modal" id="paymentOrderModalBtn" data-target="#paymentOrderModal" onclick="paymentOrder('.$orderId.')"> <i class="glyphicon glyphicon-save"></i> '.tr("Payment").'</a></li>
+	
+			<li><a type="button" onclick="printOrder('.$orderId.')"> <i class="glyphicon glyphicon-print"></i> '.tr("Print").' </a></li>
+			
+			<li><a type="button" data-toggle="modal" data-target="#removeOrderModal" id="removeOrderModalBtn" onclick="removeOrder('.$orderId.')"> <i class="glyphicon glyphicon-trash"></i>  '.tr("Remove").'</a></li>       
+		  </ul>
+		</div>';	
+	}else{
+		$button = '<!-- Single button -->
+		<div class="btn-group">
+		<button type="button" class="btn btn-default dropdown-toggle"  disabled="disabled" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			Action <span class="caret"></span>
+		</button>
+		<ul class="dropdown-menu">     
+		</ul>
+		</div>';
+	}
+	
 
  	$output['data'][] = array( 		
  		// image

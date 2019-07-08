@@ -23,8 +23,16 @@ if($_POST) {
 			$valid['success'] = true;
 			$valid['messages'] = "Successfully Added";	
 		} else {
-			$valid['success'] = false;
-			$valid['messages'] = "Error while adding the members";
+			$sqlFetch ="SELECT barcode FROM product where barcode = '$barcode'";
+			$result = $connect->query($sqlFetch);
+			$row = $result->fetch_array(); 
+			if($row[0] == $barcode) {
+				$valid['success'] = false;
+				$valid['messages'] = "The product already excited";
+			}else{
+				$valid['success'] = false;
+				$valid['messages'] = "Error while adding the product!!!";
+			}
 		}
   	}else{
   		$type = explode('.', $_FILES['productImage']['name']);
@@ -35,21 +43,26 @@ if($_POST) {
 	  			if(move_uploaded_file($_FILES['productImage']['tmp_name'], $url)) {				
 						$sql = "INSERT INTO product (product_name, product_image, brand_id, categories_id, quantity, salePrice, barcode, active, prix_achat,status) 
 						VALUES ('$productName', '$url', '$brandName', '$categoryName', '$quantity', '$prixdeVente', '$barcode' ,'$productStatus', '$prixdAchat',1)";
-
 						if($connect->query($sql) === TRUE) {
 							$valid['success'] = true;
 							$valid['messages'] = "Successfully Added";	
 						} else {
-							$valid['success'] = false;
-							$valid['messages'] = "Le code bar existe deja";
+							$sqlFetch ="SELECT barcode FROM product where barcode = '$barcode'";
+							$result = $connect->query($sqlFetch);
+							$row = $result->fetch_array(); 
+							if($row[0] == $barcode) {
+								$valid['success'] = false;
+								$valid['messages'] = "The product already excited";
+							}else{
+								$valid['success'] = false;
+								$valid['messages'] = "Error while adding the product!!!";
+							}
 						}
 				} // if
 			} // if in_array 
 		}			
   	}
-	
 	$connect->close();
-
 	echo json_encode($valid);
  
 } // /if $_POST

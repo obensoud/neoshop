@@ -79,7 +79,7 @@
       </div>
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-         <a class="navbar-brand" href="http://disputebills.com"><img style="  width: 34px;" src="https://res.cloudinary.com/disputebills/image/upload/v1462474206/blue-mark_cnzgry.png" alt="Dispute Bills"><h4 style="font-family:Snell Roundhand, cursive">&nbsp;L.B.K</h4>
+         <a class="navbar-brand" href="/dashboard.php?lang=<?php echo $_SESSION['language'] ?>"><img style="  width: 34px;" src="https://res.cloudinary.com/disputebills/image/upload/v1462474206/blue-mark_cnzgry.png" alt="Dispute Bills"><h4 style="font-family:Snell Roundhand, cursive">&nbsp;L.B.K</h4>
         </a>
         <ul class="nav navbar-nav navbar-right">        
         	<li id="navDashboard"><a href="dashboard.php?lang=<?php echo $_SESSION['language'] ?>"><i class="glyphicon glyphicon-list-alt"></i>&nbsp;&nbsp;<?php echo tr("Home")?></a></li>

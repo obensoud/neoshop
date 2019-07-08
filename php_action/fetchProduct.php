@@ -1,9 +1,6 @@
 <?php 	
-
-
-
 require_once 'core.php';
-
+require_once 'localisationIn.php';
 $sql = "SELECT product.product_id, product.product_name,  product.product_image, product.brand_id,
  		product.categories_id, product.quantity, product.salePrice,  product.active, product.status, 
  		brands.brand_name, categories.categories_name, product.barcode FROM product 
@@ -30,17 +27,34 @@ if($result->num_rows > 0) {
  		// deactivate member
  		$active = "<label class='label label-danger'>Not Available</label>";
  	} // /else
-
- 	$button = '<!-- Single button -->
-	<div class="btn-group">
-	  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	    Action <span class="caret"></span>
-	  </button>
-	  <ul class="dropdown-menu">
-	    <li><a type="button" data-toggle="modal" id="editProductModalBtn" data-target="#editProductModal" onclick="editProduct('.$productId.')"> <i class="glyphicon glyphicon-edit"></i>Edit</a></li>
-	    <li><a type="button" data-toggle="modal" data-target="#removeProductModal" id="removeProductModalBtn" onclick="removeProduct('.$productId.')"> <i class="glyphicon glyphicon-trash"></i> remove</a></li>       
-	  </ul>
-	</div>';
+	$userId = $_SESSION['userId'];
+	$sql = "SELECT profil_id FROM users WHERE user_id = '$userId'";
+	$resultProfil = $connect->query($sql);
+	$rowProfil = $resultProfil->fetch_array();
+	error_log ('profil debug: '.$rowProfil[0]);
+	$button;
+	if($rowProfil[0] == 13 || $rowProfil[0] == 14 ){
+		$button = '<!-- Single button -->
+		<div class="btn-group">
+		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			Action <span class="caret"></span>
+		</button>
+		<ul class="dropdown-menu">
+			<li><a type="button" data-toggle="modal" id="editProductModalBtn" data-target="#editProductModal" onclick="editProduct('.$productId.')"> <i class="glyphicon glyphicon-edit"></i>'.tr("Edit").'</a></li>
+			<li><a type="button" data-toggle="modal" data-target="#removeProductModal" id="removeProductModalBtn" onclick="removeProduct('.$productId.')"> <i class="glyphicon glyphicon-trash"></i> '.tr("remove").'</a></li>       
+		</ul>
+		</div>';
+	}else{
+		$button = '<!-- Single button -->
+		<div class="btn-group">
+		<button type="button" class="btn btn-default dropdown-toggle"  disabled="disabled" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			Action <span class="caret"></span>
+		</button>
+		<ul class="dropdown-menu">     
+		</ul>
+		</div>';
+	}
+ 	
 
 	// $brandId = $row[3];
 	// $brandSql = "SELECT * FROM brands WHERE brand_id = $brandId";

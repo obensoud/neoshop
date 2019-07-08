@@ -369,7 +369,7 @@
         <p><?php echo tr("Are you sure you want to delete?")?></p>
       </div>
       <div class="modal-footer removeProductFooter">
-        <button type="button" class="btn btn-default" data-dismiss="modal"> <i class="glyphicon glyphicon-remove-sign"></i> Close")?></button>
+        <button type="button" class="btn btn-default" data-dismiss="modal"> <i class="glyphicon glyphicon-remove-sign"></i> <?php echo tr("Close")?></button>
         <button type="button" class="btn btn-primary" id="removeProductBtn" data-loading-text="Loading..."> <i class="glyphicon glyphicon-ok-sign"></i><?php echo tr("Save modification")?></button>
       </div>
     </div><!-- /.modal-content -->

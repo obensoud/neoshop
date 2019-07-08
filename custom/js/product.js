@@ -226,9 +226,9 @@ $(document).ready(function() {
 						$("#submitProductForm")[0].reset();
 						$("html, body, div.modal, div.modal-content, div.modal-body").animate({scrollTop: '0'}, 100);										
 						// shows a successful message after operation
-						$('#add-product-messages').html('<div class="alert alert-success">'+
+						$('#add-product-messages').html('<div class="alert  alert-danger">'+
 			            '<button type="button" class="close" data-dismiss="alert">&times;</button>'+
-			            '<strong><i class="glyphicon glyphicon-ok-sign"></i></strong> '+ 'Success fully' + 
+			            '<strong><i class="glyphicon glyphicon-ok-sign"></i></strong> '+ 'Error' + 
 			          	'</div>');
 						// remove the mesages
 	          			$(".alert-success").delay(500).show(10, function() {

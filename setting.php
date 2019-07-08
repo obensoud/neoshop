@@ -5,7 +5,16 @@ $user_id = $_SESSION['userId'];
 $sql = "SELECT * FROM users WHERE user_id = {$user_id}";
 $query = $connect->query($sql);
 $result = $query->fetch_assoc();
-
+$userId = $_SESSION['userId'];
+$sql = "SELECT profil_id FROM users WHERE user_id = '$userId'";
+$resultProfil = $connect->query($sql);
+$rowProfil = $resultProfil->fetch_array();
+$profilShow;
+if($rowProfil[0] == 13 || $rowProfil[0] == 14 ){
+	$profilShow = True;
+}else{
+	$profilShow = False;
+}
 $connect->close();
 ?>
 <div class="row">
@@ -17,58 +26,56 @@ $connect->close();
 
 		<div class="panel panel-default" >
 			<div class="panel-heading">
-				<div class="page-heading"> <i class="glyphicon glyphicon-wrench"></i> Paramètres</div>
+				<div class="page-heading"> <i class="glyphicon glyphicon-wrench"></i> <?php echo tr("Setting")?></div>
 			</div> <!-- /panel-heading -->
 			</br>	
 			<div class="row" style="padding-right: 15px;padding-left: 15px;">
-				<div class="col-md-4"  >
+				<div class="col-md-4  <?php if(!$profilShow){echo 'hidden';}?> "  >
 					<div class="panel panel-success">
 						<div class="panel-heading">
 							<a href="profiluser.php?lang=<?php echo $_SESSION['language'] ?>" style="text-decoration:none;color:black;">
 								<span class="glyphicon glyphicon-tower"></span> 
-								Créer un profil
+								<?php echo tr("New profil")?>
 							</a>
 						</div> <!--/panel-hdeaing-->
 					</div> <!--/panel-->
 				</div> <!--/col-md-4-->
-
-				<div class="col-md-4">
+				<div class="col-md-4 <?php if(!$profilShow){echo 'hidden';}?>">
 					<div class="panel panel-info">
 						<div class="panel-heading">
 							<a href="optionuser.php?lang=<?php echo $_SESSION['language'] ?>" style="text-decoration:none;color:black;">
 								<span class="glyphicon glyphicon-stats"></span> 
-								Créer des options
+								<?php echo tr("New option")?>
 							</a>
 						</div> <!--/panel-hdeaing-->
 					</div> <!--/panel-->
 				</div> <!--/col-md-4-->
-				<div class="col-md-4">
+				<div class="col-md-4 <?php if(!$profilShow){echo 'hidden';}?>">
 					<div class="panel panel-default">
 						<div class="panel-heading">
 							<a href="groupOptionUser.php?lang=<?php echo $_SESSION['language'] ?>" style="text-decoration:none;color:black;">
 								<span class="glyphicon glyphicon-folder-open"></span> 
-								Créer un groupe d'options
+								<?php echo tr("New group of option")?>
 							</a>
 						</div> <!--/panel-hdeaing-->
 					</div> <!--/panel-->
 				</div> <!--/col-md-4-->
-				<div class="col-md-4">
+				<div class="col-md-4 <?php if(!$profilShow){echo 'hidden';}?>">
 					<div class="panel panel-danger">
 						<div class="panel-heading">
 							<a href="user.php?lang=<?php echo $_SESSION['language'] ?>" style="text-decoration:none;color:black;">
 								<span class="glyphicon glyphicon-user"></span> 
-								Tous les utilisateurs
+								<?php echo tr("All users")?>
 							</a>
 						</div> <!--/panel-hdeaing-->
 					</div> <!--/panel-->
 				</div> <!--/col-md-4-->
-
 				<div class="col-md-4">
 					<div class="panel panel-warning">
 						<div class="panel-heading">
 							<a href="myInf.php?lang=<?php echo $_SESSION['language'] ?>" style="text-decoration:none;color:black;">
 								<span class="glyphicon glyphicon-info-sign"></span> 
-								Mes informations
+								<?php echo tr("My information")?>
 
 							</a>
 						</div> <!--/panel-hdeaing-->
