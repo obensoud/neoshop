@@ -1,25 +1,76 @@
-<?php
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <title>bootstrap-imageupload</title>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="assests/bootstrap/css/bootstrap.min.css">
+        
+        
+        <link href="custom/css/bootstrap-imageupload.css" rel="stylesheet">
+		<script src="assests/jquery/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        
+        
+        <script src="custom/js/bootstrap-imageupload.js"></script>
+
+        
+        <style>
+            body {
+                padding-top: 70px;
+            }
+
+            .imageupload {
+                margin: 20px 0;
+            }
+        </style>
+
+    </head>
+
+    <body>
+            <!-- bootstrap-imageupload. -->
+            <div class="imageupload panel panel-default">
+                <div class="panel-heading clearfix">
+                    <h3 class="panel-title pull-left">Upload Image</h3>
+                    <div class="btn-group pull-right">
+                        <button type="button" class="btn btn-default active">File</button>
+                        <button type="button" class="btn btn-default">URL</button>
+                    </div>
+                </div>
+                <div class="file-tab panel-body">
+                    <label class="btn btn-default btn-file">
+                        <span>Browse</span>
+                        <!-- The file is stored here. -->
+                        <input type="file" name="image-file">
+                    </label>
+                    <button type="button" class="btn btn-default">Remove</button>
+                </div>
+                <div class="url-tab panel-body">
+                    <div class="input-group">
+                        <input type="text" class="form-control hasclear" placeholder="Image URL">
+                        <div class="input-group-btn">
+                            <button type="button" class="btn btn-default">Submit</button>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-default">Remove</button>
+                    <!-- The URL is stored here. -->
+                    <input type="hidden" name="image-url">
+                </div>
+            </div>
 
 
-?>
-<html>
-	<head>
-		<title>Stock Management System</title>
+			<script>
+            var $imageupload = $('.imageupload');
+            $imageupload.imageupload();
 
-	  <!-- custom css -->
-	  <link rel="stylesheet" href="custom/css/language.css">
-	  <script src="custom/js/language.js"></script>	
-	</head>
-	<body>
-		<div id="trp-floater-ls" data-no-translation class="trp-language-switcher-container trp-floater-ls-names">
-		    <div id="trp-floater-ls-current-language" class="trp-with-flags">
-		        <a href="?lang=en_US" class="trp-floater-ls-disabled-language trp-ls-disabled-language" onclick="void(0)"><img class="trp-flag-image" src="assests/images/lang/en_GB.png" width="18" height="12" alt="en_GB" title="English">English</a>
-		    </div>
-		    <div id="trp-floater-ls-language-list" class="trp-with-flags">
-		        <a  title="French"><img class="trp-flag-image" src="assests/images/lang/fr_FR.png" width="18" height="12" alt="fr_FR" title="French">French</a>
-		        <a  title="French"><img class="trp-flag-image" src="assests/images/lang/.png" width="18" height="12" alt="fr_FR" title="French">Maroc</a>
-		        <a  class="trp-floater-ls-disabled-language trp-ls-disabled-language"><img class="trp-flag-image" src="assests/images/lang/en_GB.png" width="18" height="12" alt="en_GB" title="English">English</a>
-		    </div>
-		</div>
-	</body>
+
+        </script>
+
+    </body>
+
 </html>

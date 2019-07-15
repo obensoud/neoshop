@@ -24,7 +24,7 @@
                 <div class="panel panel-default">
                         <div class="panel-heading "> 
                             <h4>
-                                <i class="glyphicon glyphicon glyphicon-book" style="font-size: 20px;"></i>
+                                <i class="glyphicon glyphicon glyphicon-hand-down" style="font-size: 20px;"></i>
                                 <?php echo tr("Bonjour")?>
                             </h4>
                         </div>
@@ -51,6 +51,10 @@
                                                     <h1>John Doe</h1> 
                                                     <p>Architect & Engineer</p> 
                                                     <p>We love that guy</p>
+                                                    <button class="btn btn-success" type="button"  onclick="">
+                                                        <i class="glyphicon glyphicon-pencil" style="color:white"> </i>
+                                                        <?php echo tr(" Supply")?>
+                                                    </button> 
                                                 </div>
                                             </div>
                                         </div>
@@ -65,6 +69,10 @@
                                                     <h1>John Doe</h1> 
                                                     <p>Architect & Engineer</p> 
                                                     <p>We love that guy</p>
+                                                    <button class="btn btn-success" type="button"  onclick="">
+                                                        <i class="glyphicon glyphicon-book" style="color:white"> </i>
+                                                        <?php echo tr(" Book")?>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -74,34 +82,26 @@
                             <br>
                             <div class="container">
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-md-4"></div>
+                                    <div class="col-md-4">
                                         <div class="flip-card">
                                             <div class="flip-card-inner">
                                                 <div class="flip-card-front">
-                                                    <img src="assests/images/shop/divers.png" alt="Avatar" style="width:300px;height:300px;">
+                                                    <img src="assests/images/shop/fastService.png" alt="Avatar" style="width:300px;height:300px;">
                                                 </div>
                                                 <div class="flip-card-back">
                                                     <h1>John Doe</h1> 
                                                     <p>Architect & Engineer</p> 
                                                     <p>We love that guy</p>
+                                                    <button class="btn btn-success" type="button"  onclick="$(location).attr('href', '/servicefast.php');">
+                                                        <i class="glyphicon glyphicon-list-alt" style="color:white"> </i>
+                                                        <?php echo tr(" Request")?>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="flip-card">
-                                            <div class="flip-card-inner">
-                                                <div class="flip-card-front">
-                                                    <img src="assests/images/shop/service.jfif" alt="Avatar" style="width:300px;height:300px;">
-                                                </div>
-                                                <div class="flip-card-back">
-                                                    <h1>John Doe</h1> 
-                                                    <p>Architect & Engineer</p> 
-                                                    <p>We love that guy</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <div class="col-md-4"></div>
                                 </div>
                             </div>
                         </div>
@@ -117,5 +117,5 @@
 
 <!-- fullCalendar 2.2.5 -->
 
-<script src="custom/js/dashbord.js"></script>
+
 <?php require_once 'includes/footer.php'; ?>
