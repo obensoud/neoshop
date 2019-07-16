@@ -11,7 +11,7 @@ $('#barcodeScanner').keyup(function(e) {
 			dataType: 'json',
 			success:function(response) {
           console.log('response: '+response.product_name);
-          $('#tableReceipt').append("<tr id=\"row"+nemberOfRow+"\"> </th> <td class=\"product_name\" style=\"font-size:14px\;\" > "+response.product_name+" </td> <td><input id=\"number"+nemberOfRow+"\" type=\"number\" step=\"1\"  onchange=\"myCalcule()\" class= \"form-control price\" value = \"1\" min=\"1\" max=\"99\"></td>  <td id=\"rate"+nemberOfRow+"\" class=\"rate\">"+response.salePrice+"</td> <td class=\"totalrate\" id=\"total"+nemberOfRow+"\">"+response.rate+"</td> <td> <button class=\"btn btn-default removeProductRowBtn removeProductRowBtntable\" type=\"button\" id=\"removeProductRowBtn\" onclick=\"removeProductRow("+nemberOfRow+")\"><i class=\"glyphicon glyphicon-trash\"> </i> </button> </td> </tr>");
+          $('#tableReceipt').append("<tr id=\"row"+nemberOfRow+"\"> </th> <td class=\"product_name\" style=\"font-size:14px\;\" > "+response.product_name+" </td> <td class=\"valueOfBarreCode hidden\" style=\"font-size:14px\;\" >"+valueOfBarreCode+"</td> <td><input id=\"number"+nemberOfRow+"\" type=\"number\" step=\"1\"  onchange=\"myCalcule()\" class= \"form-control price\" value = \"1\" min=\"1\" max=\"99\"></td>  <td id=\"rate"+nemberOfRow+"\" class=\"rate\">"+response.salePrice+"</td> <td class=\"totalrate\" id=\"total"+nemberOfRow+"\">"+response.rate+"</td> <td> <button class=\"btn btn-default removeProductRowBtn removeProductRowBtntable\" type=\"button\" id=\"removeProductRowBtn\" onclick=\"removeProductRow("+nemberOfRow+")\"><i class=\"glyphicon glyphicon-trash\"> </i> </button> </td> </tr>");
           ++nemberOfRow;
           ++nemberOfALLRow;
           myCalcule();
@@ -84,6 +84,7 @@ function removeProductAllRow(){
 function saveChange(){
   var i ;
   var myArrayProdactName = new Array();
+  var myArrayBarCode = new Array();
   var myArrayQuanty = new Array();
   var myArrayPrice = new Array();
   var myArrayTotal = new Array();
@@ -93,22 +94,29 @@ function saveChange(){
     var temp = $('.product_name').get(i).innerHTML;
     temp = temp.substring(1,temp.length-1);
     myArrayProdactName.push(temp);
+    myArrayBarCode.push($('.valueOfBarreCode').get(i).innerHTML);
     myArrayQuanty.push($('.price').get(i).value);
     myArrayPrice.push($('.rate').get(i).innerHTML);
     myArrayTotal.push($('.totalrate').get(i).innerHTML);
   }
   var myJSONProdactName = JSON.stringify(myArrayProdactName);
+  var myJSONBarCode = JSON.stringify(myArrayBarCode);
   var myJSONQuanty = JSON.stringify(myArrayQuanty);
   var myJSONPrice = JSON.stringify(myArrayPrice);
   var myJSONTotal = JSON.stringify(myArrayTotal);
+  console.log('nemberOfRow: '+nemberOfRow);
   $.ajax({
       url: 'php_action/createReceipt.php',
       type: 'post',
-      data: {Totalreceipt : $('#Totalreceipt').html(), NemberOfRow : nemberOfRow, myJSONProdactName : myJSONProdactName, myJSONQuanty : myJSONQuanty, myJSONPrice : myJSONPrice, myJSONTotal : myJSONTotal},
+      data: {Totalreceipt : $('#Totalreceipt').html(), NemberOfRow : nemberOfRow, myJSONProdactName : myJSONProdactName, myJSONQuanty : myJSONQuanty, myJSONPrice : myJSONPrice, myJSONTotal : myJSONTotal, myJSONBarCode : myJSONBarCode},
       dataType: 'json',
       success:function(response) {
-        }
-       })
+        console.log('OK');
+      },
+      error: function(){
+        console.log('error!');
+      }
+  })
 }
 function newReciept(){
   $(".changeButton2").addClass('hidden');

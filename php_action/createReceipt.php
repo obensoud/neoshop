@@ -4,6 +4,7 @@ require_once 'core.php';
 $Totalreceipt 		= $_POST['Totalreceipt'];
 $NemberOfRow 		= $_POST['NemberOfRow'];
 $myJSONProdactName 	= json_decode($_POST['myJSONProdactName']);
+$myJSONBarCode	 	= json_decode($_POST['myJSONBarCode']);
 $myJSONQuanty 		= json_decode($_POST['myJSONQuanty']);
 $myJSONPrice 		= json_decode($_POST['myJSONPrice']);
 $myJSONTotal 		= json_decode($_POST['myJSONTotal']);
@@ -34,14 +35,14 @@ if($connect->query($sql2) === true) {
 }
 $orderItemStatus = false;
 for($x = 0; $x < $NemberOfRow-1; $x++) {	
-  	$temp1 =  $myJSONProdactName[$x];
+  	$temp1 =  $myJSONBarCode[$x];
   	$temp2 = strval("\"");
-	$updateProductQuantitySql = "SELECT quantity, product_id FROM product WHERE product_name = {$temp2}{$temp1}{$temp2}";
+	$updateProductQuantitySql = "SELECT quantity, product_id FROM product WHERE barcode = {$temp2}{$temp1}{$temp2}";
 	$updateProductQuantityData = $connect->query($updateProductQuantitySql);
 	while ($updateProductQuantityResult = $updateProductQuantityData->fetch_row()) {
 			$updateQuantity[$x] = $updateProductQuantityResult[0] - $myJSONQuanty[$x];							
 			// update product table
-			$updateProductTable = "UPDATE product SET quantity = '".$updateQuantity[$x]."' WHERE product_name = ".$temp2."".$temp1."".$temp2." ";
+			$updateProductTable = "UPDATE product SET quantity = '".$updateQuantity[$x]."' WHERE barcode = ".$temp2."".$temp1."".$temp2." ";
 			$connect->query($updateProductTable);
 			// add into order_item
 			$orderItemSql = "INSERT INTO order_item (order_id, product_id, quantity, rate, total, order_item_status) 

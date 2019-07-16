@@ -133,6 +133,7 @@
 								<thead> 
 									<tr> 
 										<th><?php echo tr("Product Name")?></th>
+										<th class="hidden"><?php echo tr("Bar code")?></th>
 										<th><?php echo tr("Quantity")?></th>
 										<th><?php echo tr("U.P")?></th> 
 										<th><?php echo tr("Total")?></th>
@@ -147,7 +148,7 @@
 										<th></th>
 										<th><?php echo tr("Total")?></th>
 										<th id = "Totalreceipt">0</th>
-										<th><?php echo tr("$")?></th>
+										<th><?php echo tr("DH")?></th>
 									</tr>
 								</tfoot>
 							</table>
