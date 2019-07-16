@@ -292,8 +292,9 @@ if($_GET['o'] == 'add') {
 			  <table class="table" id="productTable">
 			  	<thead>
 			  		<tr>			  			
-			  			<th style="width:40%;"><?php echo tr("Product")?></th>
-			  			<th style="width:20%;"><?php echo tr("Rate")?></th>
+			  			<th style="width:40%;"><?php echo tr("Bar code")?></th>
+			  			<th style="width:20%;"><?php echo tr("Name")?></th>
+						<th style="width:20%;"><?php echo tr("P.U")?></th>
 			  			<th style="width:15%;"><?php echo tr("Quantity")?></th>			  			
 			  			<th style="width:15%;"><?php echo tr("Total")?></th>			  			
 			  			<th style="width:10%;"></th>
