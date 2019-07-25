@@ -89,14 +89,17 @@
                       <canvas id="canvasTarget" width="150" height="150"></canvas>
                     </div>
                   </div>
-                <table id="tablebarcode" class="table table-bordered hidden"  style=" margin-top:6px; height:43cm;text-align:center; table-layout: fixed;  border-collapse: separate;  border-spacing:10px;">
+                <table id="tablebarcode" class="table table-bordered hidden"  >
                   <tbody class="0">
-                    <tr class="1">
+                    <tr id="101" class="11"></tr>
+                   <!--
+                     style=" margin-top:6px; height:43cm;text-align:center; table-layout: fixed;  border-collapse: separate;  border-spacing:10px;" // table 
+                      <tr class="1">
                       <td class="11"  style="padding-top:45px;" ></td>
                       <td class="12"  style="padding-top:45px;" ></td>
                       <td class="13"  style="padding-top:45px;" ></td>
-                      <!-- <td class="14"  style="padding-top:45px;" ></td> -->
-                    </tr>
+                       <td class="14"  style="padding-top:45px;" ></td>
+                    </tr> -->
                     </tbody>
                 </table>
                 <a id="backImp"class="hidden" href="javascript:myFunctionBack()">Retour</a>

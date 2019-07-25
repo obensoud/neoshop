@@ -1075,7 +1075,8 @@
         }
       }  
       if (settings.showHRI){
-        content += "<div style=\"clear:both; width: 100%; background-color: " + settings.bgColor + "; color: " + settings.color + "; text-align: center; font-size: " + settings.fontSize + "px; margin-top: " + settings.marginHRI + "px;\">"+hri+"</div>";
+        //content += "<div style=\"clear:both; width: 100%; background-color: " + settings.bgColor + "; color: " + settings.color + "; text-align: center; font-size: " + settings.fontSize + "px; margin-top: " + settings.marginHRI + "px;\">"+hri+"</div>";
+        content += "<div style=\"clear:both; width: 15%; background-color: " + settings.bgColor + "; color: " + settings.color + "; text-align: center; font-size: 15px; margin-top: " + settings.marginHRI + "px;\">"+hri+"</div>";
       }
       this.resize($container, mw * columns).html(content);
     },

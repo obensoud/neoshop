@@ -2,14 +2,15 @@
 
     var temp = $(".0").html();  
     function imprimebarcode(){
-      $(".0").html(temp);
       $(".11").html($(".barcodeTarget").html());
-      $(".12").html($(".barcodeTarget").html());
-      $(".13").html($(".barcodeTarget").html());
+      /* $(".0").html(temp);
+      $(".11").html($(".barcodeTarget").html());
+      //$(".12").html($(".barcodeTarget").html());
+      //$(".13").html($(".barcodeTarget").html());
       //$(".14").html($(".barcodeTarget").html());
       var pas;
       var htmlbarcode='';
-      for (pas = 0; pas < 10; pas++) {
+      for (pas = 0; pas < 1; pas++) {
         htmlbarcode+=$(".0").html();
       }
       $(".0").html(htmlbarcode);
@@ -19,10 +20,17 @@
       $("#panelImp").addClass('hidden');
       $("#picklistImp").addClass('hidden');
       $("#btnImp").addClass('hidden');
-      setTimeout(myFunctionImp, 1000);
+      setTimeout(myFunctionImp, 1000);*/
+      myFunctionImp();
     }
     function myFunctionImp() {
-      window.print();
+      //window.print();
+      var divToPrint=document.getElementById('101');
+      var newWin=window.open('','Print-Window');
+      newWin.document.open();
+      newWin.document.write('<html><body onload="window.print()">'+divToPrint.innerHTML+'</body></html>');
+      newWin.document.close();
+     // setTimeout(function(){newWin.close();},10);
     }
     function myFunctionBack() {
       $("#tablebarcode").addClass('hidden');
