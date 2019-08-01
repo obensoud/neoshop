@@ -1,5 +1,4 @@
-</div> <!-- container -->
-	
+</div> 
 
 	<!-- file input -->
 	<script src="assests/plugins/fileinput/js/plugins/canvas-to-blob.min.js" type="text/javascript"></script>	
@@ -9,7 +8,8 @@
 
 
 	<!-- DataTables -->
-	<script src="assests/plugins/datatables/jquery.dataTables.min.js"></script>
+	<script src="assests/plugins/datatables/jquery.dataTables.js"></script>
+	
 	<?php require_once 'php_action/tchat.php'; ?>
 	<?php require_once 'php_action/language.php'; ?>
 </body>

@@ -20,6 +20,7 @@
 
 				<div class="div-action pull pull-right" style="padding-bottom:20px;">
 					<button class="btn btn-default button1" data-toggle="modal" id="addCategoriesModalBtn" data-target="#addCategoriesModal"> <i class="glyphicon glyphicon-plus-sign"></i> <?php echo tr("Add a Category")?> </button>
+					<button class="btn btn-default button2" data-toggle="modal" id="button-a" data-target="#ExportToExcel"> <i class="glyphicon glyphicon-open-file"></i> <?php echo tr("Export to Excel")?> </button>
 				</div> <!-- /div-action -->				
 				
 				<table class="table" id="manageCategoriesTable">
@@ -163,7 +164,31 @@
 </div><!-- /.modal -->
 <!-- /categories brand -->
 
-
+<script>
+	var wb ;
+	var wbout ;
+	function s2ab(s) {
+		var buf = new ArrayBuffer(s.length);
+		var view = new Uint8Array(buf);
+		for (var i=0; i<s.length; i++){
+			view[i] = s.charCodeAt(i) & 0xFF;
+		} 
+		return buf;
+	}
+	$("#button-a").click(function(){
+		$('#manageCategoriesTable').DataTable( {
+			destroy: true,
+			"bPaginate": false
+		} );
+		var tabs = document.getElementById('manageCategoriesTable');
+		for(i=0 ; i<tabs.rows.length;i++ ){
+			tabs.rows[i].deleteCell(2);
+		}
+		wb = XLSX.utils.table_to_book(document.getElementById('manageCategoriesTable'), {sheet:"Sheet JS"});
+		wbout = XLSX.write(wb, {bookType:'xlsx', bookSST:true, type: 'binary'});
+		saveAs(new Blob([s2ab(wbout)],{type:"application/octet-stream"}), 'ListOfCategories.xlsx');
+		setTimeout(function(){document.location.reload(true)},10);
+	});
+</script>
 <script src="custom/js/categories.js"></script>
-
 <?php require_once 'includes/footer.php'; ?>

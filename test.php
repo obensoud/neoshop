@@ -1,76 +1,40 @@
-<!DOCTYPE html>
+<?php require_once 'includes/header.php'; ?>
 
-<html lang="en">
 
-    <head>
-
-        <title>bootstrap-imageupload</title>
-
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <link rel="stylesheet" href="assests/bootstrap/css/bootstrap.min.css">
-        
-        
-        <link href="custom/css/bootstrap-imageupload.css" rel="stylesheet">
-		<script src="assests/jquery/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-        
-        
-        <script src="custom/js/bootstrap-imageupload.js"></script>
-
-        
-        <style>
-            body {
-                padding-top: 70px;
+<div id="page">
+    <div id="navbar"><span>Red Stapler - SheetJS </span></div>
+    <div id="wrapper">
+            <table id="mytable">
+                    <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Company</th>
+                    </tr>
+                    <tr>
+                    <td>Harry</td>
+                    <td>Potter</td>
+                    <td>WB</td>
+                    </tr>
+                    <tr>
+                    <td>Captain</td>
+                    <td>America</td>
+                    <td>Marvel</td>
+                    </tr>
+                    </table>
+            <button id="button-a">Create Excel</button>
+    </div>
+    <script>
+            var wb = XLSX.utils.table_to_book(document.getElementById('mytable'), {sheet:"Sheet JS"});
+            var wbout = XLSX.write(wb, {bookType:'xlsx', bookSST:true, type: 'binary'});
+            function s2ab(s) {
+                            var buf = new ArrayBuffer(s.length);
+                            var view = new Uint8Array(buf);
+                            for (var i=0; i<s.length; i++) view[i] = s.charCodeAt(i) & 0xFF;
+                            return buf;
             }
-
-            .imageupload {
-                margin: 20px 0;
-            }
-        </style>
-
-    </head>
-
-    <body>
-            <!-- bootstrap-imageupload. -->
-            <div class="imageupload panel panel-default">
-                <div class="panel-heading clearfix">
-                    <h3 class="panel-title pull-left">Upload Image</h3>
-                    <div class="btn-group pull-right">
-                        <button type="button" class="btn btn-default active">File</button>
-                        <button type="button" class="btn btn-default">URL</button>
-                    </div>
-                </div>
-                <div class="file-tab panel-body">
-                    <label class="btn btn-default btn-file">
-                        <span>Browse</span>
-                        <!-- The file is stored here. -->
-                        <input type="file" name="image-file">
-                    </label>
-                    <button type="button" class="btn btn-default">Remove</button>
-                </div>
-                <div class="url-tab panel-body">
-                    <div class="input-group">
-                        <input type="text" class="form-control hasclear" placeholder="Image URL">
-                        <div class="input-group-btn">
-                            <button type="button" class="btn btn-default">Submit</button>
-                        </div>
-                    </div>
-                    <button type="button" class="btn btn-default">Remove</button>
-                    <!-- The URL is stored here. -->
-                    <input type="hidden" name="image-url">
-                </div>
-            </div>
-
-
-			<script>
-            var $imageupload = $('.imageupload');
-            $imageupload.imageupload();
-
-
-        </script>
-
-    </body>
-
-</html>
+            $("#button-a").click(function(){
+            saveAs(new Blob([s2ab(wbout)],{type:"application/octet-stream"}), 'test.xlsx');
+            });
+    </script>
+    </div>
+<?php require_once 'includes/footer.php'; ?>

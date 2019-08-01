@@ -23,7 +23,7 @@
               <div id="picklistImp" class="form-inline  col-md-offset-2">
                 <div class="form-group">
                   <label for="email">Choisir le code barre:</label>
-                  <select class="form-control" name="productName[]" style= "width:500px;" id="barcodeValue" onchange="hiddenimprimebarcode();">
+                  <select class="chosen form-control" name="productName[]" style= "width:500px;" id="barcodeValue" onchange="hiddenimprimebarcode();">
                       <option value="">~~Select~~</option>
                       <?php
                       $productSql = "SELECT * FROM product WHERE active = 1 AND status = 1 AND quantity != 0 ";
@@ -109,7 +109,9 @@
           </div> <!-- /col-md-12 -->
         </div> <!-- /row -->
       </div>
-      <script type="text/javascript" src="assests/jquery/jquery-1.3.2.min.js"></script>
       <script type="text/javascript" src="assests/jquery/jquery-barcode.js"></script>
       <script type="text/javascript" src="custom/js/barcode.js"></script>
+      <script type="text/javascript">
+            $(".chosen").chosen();
+      </script>
       <?php require_once 'includes/footer.php'; ?>

@@ -13,7 +13,7 @@ if($_POST) {
 	$format = DateTime::createFromFormat('m/d/Y',$endDate);
 	$end_date = $format->format("Y-m-d");
 
-	$sql = "SELECT * FROM orders WHERE order_date >= '$start_date' AND order_date <= '$end_date' and order_status = 1";
+	$sql = "SELECT MONTH(order_date), Sum(paid) FROM orders  WHERE order_date >= '$start_date' AND order_date <= '$end_date' and order_status = 1 GROUP BY MONTH(order_date)";
 	$result = $connect->query($sql);
 
 	if($result->num_rows > 0) { 

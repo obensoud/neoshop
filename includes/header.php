@@ -45,6 +45,14 @@
     <link rel="stylesheet" href="custom/css/language.css">
     <script src="custom/js/language.js"></script>
     
+    <!-- pick list -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+
+    <!--table to Excel -->
+    <script lang="javascript" src="custom/js/xlsx.full.min.js"></script>
+    <script lang="javascript" src="custom/js/FileSaver.js"></script>
+
     <style type="text/css">
       canvas { 
         padding: 15px;

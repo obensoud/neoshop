@@ -5,8 +5,8 @@
 	<div class="col-md-12">
 
 		<ol class="breadcrumb">
-		  <li><a href="dashboard.php?lang=<?php echo $_SESSION['language'] ?>">Home</a></li>		  
-		  <li class="active">Product</li>
+			<li><a href="dashboard.php?lang=<?php echo $_SESSION['language'] ?>">Home</a></li>
+			<li class="active">Product</li>
 		</ol>
 
 		<div class="panel panel-default">
@@ -18,352 +18,390 @@
 				<div class="remove-messages"></div>
 
 				<div class="div-action pull pull-right" style="padding-bottom:20px;">
-					<button class="btn btn-default button1" data-toggle="modal" id="addProductModalBtn" data-target="#addProductModal"> <i class="glyphicon glyphicon-plus-sign"></i> Add Product </button>
-				</div> <!-- /div-action -->				
-				
+					<button class="btn btn-default button1" data-toggle="modal" id="addProductModalBtn" data-target="#addProductModal"> <i class="glyphicon glyphicon-plus-sign"></i><?php echo tr("Add Product") ?> </button>
+					<button class="btn btn-default button2" data-toggle="modal" id="button-a" data-target="#ExportToExcel"> <i class="glyphicon glyphicon-open-file"></i> <?php echo tr("Export to Excel") ?> </button>
+				</div> <!-- /div-action -->
+
 				<table class="table" id="manageProductTable">
 					<thead>
 						<tr>
-							<th style="width:10%;">Photo</th>							
-							<th>Nom du Product</th>
-							<th>Code barre</th>
-							<th>Pourcentage</th>							
-							<th>Quantité</th>
-							<th><?php echo tr("Brand")?></th>
-							<th>Category</th>
-							<th>Statut</th>
-							<th style="width:15%;">Options</th>
+							<th style="width:10%;"><?php echo tr("Photo") ?></th>
+							<th><?php echo tr("Nom du Product") ?></th>
+							<th><?php echo tr("Code barre") ?></th>
+							<th><?php echo tr("Pourcentage") ?></th>
+							<th><?php echo tr("Quantité") ?></th>
+							<th><?php echo tr("Brand") ?></th>
+							<th><?php echo tr("Category") ?></th>
+							<th><?php echo tr("Statut") ?></th>
+							<th style="width:15%;"><?php echo tr("Options") ?></th>
 						</tr>
 					</thead>
 				</table>
 				<!-- /table -->
-
 			</div> <!-- /panel-body -->
-		</div> <!-- /panel -->		
+		</div> <!-- /panel -->
 	</div> <!-- /col-md-12 -->
 </div> <!-- /row -->
 
 
 <!-- add product -->
 <div class="modal fade" id="addProductModal" tabindex="-1" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
+	<div class="modal-dialog">
+		<div class="modal-content">
 
-    	<form class="form-horizontal" id="submitProductForm" action="php_action/createProduct.php" method="POST" enctype="multipart/form-data">
-	      <div class="modal-header">
-	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	        <h4 class="modal-title"><i class="fa fa-plus"></i> Add Product</h4>
-	      </div>
+			<form class="form-horizontal" id="submitProductForm" action="php_action/createProduct.php" method="POST" enctype="multipart/form-data">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title"><i class="fa fa-plus"></i> Add Product</h4>
+				</div>
 
-	      <div class="modal-body" style="max-height:450px; overflow:auto;">
+				<div class="modal-body" style="max-height:450px; overflow:auto;">
 
-	      	<div id="add-product-messages"></div>
+					<div id="add-product-messages"></div>
 
-	      	<div class="form-group">
-	        	<label for="productImage" class="col-sm-3 control-label">Image du Product: </label>
-	        	<label class="col-sm-1 control-label">: </label>
-				    <div class="col-sm-8">
-					    <!-- the avatar markup -->
-							<div id="kv-avatar-errors-1" class="center-block" style="display:none;"></div>							
-					    <div class="kv-avatar center-block">					        
-					        <input type="file" class="form-control" id="productImage" placeholder="Nom du Product" name="productImage" class="file-loading" style="width:auto;"/>
-					    </div>
-				      
-				    </div>
-	        </div> <!-- /form-group-->	     	           	       
+					<div class="form-group">
+						<label for="productImage" class="col-sm-3 control-label">Image du Product: </label>
+						<label class="col-sm-1 control-label">: </label>
+						<div class="col-sm-8">
+							<!-- the avatar markup -->
+							<div id="kv-avatar-errors-1" class="center-block" style="display:none;"></div>
+							<div class="kv-avatar center-block">
+								<input type="file" class="form-control" id="productImage" placeholder="Nom du Product" name="productImage" class="file-loading" style="width:auto;" />
+							</div>
 
-	        <div class="form-group">
-	        	<label for="productName" class="col-sm-3 control-label">Nom du Product: </label>
-	        	<label class="col-sm-1 control-label">: </label>
-				    <div class="col-sm-8">
-				      <input type="text" class="form-control" id="productName" placeholder="Nom du Product" name="productName" autocomplete="off">
-				    </div>
-	        </div> <!-- /form-group-->	    
-			<div class="form-group">
-	        	<label for="barCode" class="col-sm-3 control-label">Code barre: </label>
-	        	<label class="col-sm-1 control-label">: </label>
-				    <div class="col-sm-8">
-				      <input type="text" class="form-control" id="barCode" placeholder="Code barre" name="barCode" autocomplete="off">
-				    </div>
-	        </div>
-	        <div class="form-group">
-	        	<label for="quantity" class="col-sm-3 control-label">Quantité: </label>
-	        	<label class="col-sm-1 control-label">: </label>
-				    <div class="col-sm-8">
-				      <input type="text" class="form-control" id="quantity" placeholder="Quantité" name="quantity" autocomplete="off">
-				    </div>
-	        </div> <!-- /form-group-->	        	 
+						</div>
+					</div> <!-- /form-group-->
 
-	        <div class="form-group">
-	        	<label for="rate" class="col-sm-3 control-label">Pourcentage: </label>
-	        	<label class="col-sm-1 control-label">: </label>
-				    <div class="col-sm-8">
-				      <input type="text" class="form-control" id="rate" placeholder="Pourcentage" name="rate" autocomplete="off">
-				    </div>
-	        </div> <!-- /form-group-->	     	        
+					<div class="form-group">
+						<label for="productName" class="col-sm-3 control-label">Nom du Product: </label>
+						<label class="col-sm-1 control-label">: </label>
+						<div class="col-sm-8">
+							<input type="text" class="form-control" id="productName" placeholder="Nom du Product" name="productName" autocomplete="off">
+						</div>
+					</div> <!-- /form-group-->
+					<div class="form-group">
+						<label for="barCode" class="col-sm-3 control-label">Code barre: </label>
+						<label class="col-sm-1 control-label">: </label>
+						<div class="col-sm-8">
+							<input type="text" class="form-control" id="barCode" placeholder="Code barre" name="barCode" autocomplete="off">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="quantity" class="col-sm-3 control-label">Quantité: </label>
+						<label class="col-sm-1 control-label">: </label>
+						<div class="col-sm-8">
+							<input type="text" class="form-control" id="quantity" placeholder="Quantité" name="quantity" autocomplete="off">
+						</div>
+					</div> <!-- /form-group-->
 
-	        <div class="form-group">
-	        	<label for="brandName" class="col-sm-3 control-label"><?php echo tr("Brand")?>: </label>
-	        	<label class="col-sm-1 control-label">: </label>
-				    <div class="col-sm-8">
-				      <select class="form-control" id="brandName" name="brandName">
-				      	<option value="">~~Select~~</option>
-				      	<?php 
-				      	$sql = "SELECT brand_id, brand_name, brand_active, brand_status FROM brands WHERE brand_status = 1 AND brand_active = 1 ORDER BY  brand_name ASC";
+					<div class="form-group">
+						<label for="rate" class="col-sm-3 control-label">Pourcentage: </label>
+						<label class="col-sm-1 control-label">: </label>
+						<div class="col-sm-8">
+							<input type="text" class="form-control" id="rate" placeholder="Pourcentage" name="rate" autocomplete="off">
+						</div>
+					</div> <!-- /form-group-->
+
+					<div class="form-group">
+						<label for="brandName" class="col-sm-3 control-label"><?php echo tr("Brand") ?>: </label>
+						<label class="col-sm-1 control-label">: </label>
+						<div class="col-sm-8">
+							<select class="form-control" id="brandName" name="brandName">
+								<option value="">~~Select~~</option>
+								<?php
+								$sql = "SELECT brand_id, brand_name, brand_active, brand_status FROM brands WHERE brand_status = 1 AND brand_active = 1 ORDER BY  brand_name ASC";
 								$result = $connect->query($sql);
 
-								while($row = $result->fetch_array()) {
-									echo "<option value='".$row[0]."'>".$row[1]."</option>";
+								while ($row = $result->fetch_array()) {
+									echo "<option value='" . $row[0] . "'>" . $row[1] . "</option>";
 								} // while
-								
-				      	?>
-				      </select>
-				    </div>
-	        </div> <!-- /form-group-->	
 
-	        <div class="form-group">
-	        	<label for="categoryName" class="col-sm-3 control-label">Nom de Category: </label>
-	        	<label class="col-sm-1 control-label">: </label>
-				    <div class="col-sm-8">
-				      <select type="text" class="form-control" id="categoryName" placeholder="Nom du Product" name="categoryName" >
-				      	<option value="">~~Select~~</option>
-				      	<?php 
-				      	$sql = "SELECT categories_id, categories_name, categories_active, categories_status FROM categories WHERE categories_status = 1 AND categories_active = 1 ORDER BY  categories_name ASC";
+								?>
+							</select>
+						</div>
+					</div> <!-- /form-group-->
+
+					<div class="form-group">
+						<label for="categoryName" class="col-sm-3 control-label">Nom de Category: </label>
+						<label class="col-sm-1 control-label">: </label>
+						<div class="col-sm-8">
+							<select type="text" class="form-control" id="categoryName" placeholder="Nom du Product" name="categoryName">
+								<option value="">~~Select~~</option>
+								<?php
+								$sql = "SELECT categories_id, categories_name, categories_active, categories_status FROM categories WHERE categories_status = 1 AND categories_active = 1 ORDER BY  categories_name ASC";
 								$result = $connect->query($sql);
 
-								while($row = $result->fetch_array()) {
-									echo "<option value='".$row[0]."'>".$row[1]."</option>";
+								while ($row = $result->fetch_array()) {
+									echo "<option value='" . $row[0] . "'>" . $row[1] . "</option>";
 								} // while
-								
-				      	?>
-				      </select>
-				    </div>
-	        </div> <!-- /form-group-->					        	         	       
 
-	        <div class="form-group">
-	        	<label for="productStatus" class="col-sm-3 control-label">Statut: </label>
-	        	<label class="col-sm-1 control-label">: </label>
-				    <div class="col-sm-8">
-				      <select class="form-control" id="productStatus" name="productStatus">
-				      	<option value="">~~Select~~</option>
-				      	<option value="1">Available</option>
-				      	<option value="2">InAvailable</option>
-				      </select>
-				    </div>
-	        </div> <!-- /form-group-->	         	        
-	      </div> <!-- /modal-body -->
-	      
-	      <div class="modal-footer">
-	        <button type="button" class="btn btn-default" data-dismiss="modal"> <i class="glyphicon glyphicon-remove-sign"></i> Close</button>
-	        
-	        <button type="submit" class="btn btn-primary" id="createProductBtn" data-loading-text="Loading..." autocomplete="off"> <i class="glyphicon glyphicon-ok-sign"></i> Enregistrer les modifications</button>
-	      </div> <!-- /modal-footer -->	      
-     	</form> <!-- /.form -->	     
-    </div> <!-- /modal-content -->    
-  </div> <!-- /modal-dailog -->
-</div> 
+								?>
+							</select>
+						</div>
+					</div> <!-- /form-group-->
+
+					<div class="form-group">
+						<label for="productStatus" class="col-sm-3 control-label">Statut: </label>
+						<label class="col-sm-1 control-label">: </label>
+						<div class="col-sm-8">
+							<select class="form-control" id="productStatus" name="productStatus">
+								<option value="">~~Select~~</option>
+								<option value="1">Available</option>
+								<option value="2">InAvailable</option>
+							</select>
+						</div>
+					</div> <!-- /form-group-->
+				</div> <!-- /modal-body -->
+
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal"> <i class="glyphicon glyphicon-remove-sign"></i> Close</button>
+
+					<button type="submit" class="btn btn-primary" id="createProductBtn" data-loading-text="Loading..." autocomplete="off"> <i class="glyphicon glyphicon-ok-sign"></i> Enregistrer les modifications</button>
+				</div> <!-- /modal-footer -->
+			</form> <!-- /.form -->
+		</div> <!-- /modal-content -->
+	</div> <!-- /modal-dailog -->
+</div>
 <!-- /add categories -->
 
 
 <!-- edit categories brand -->
 <div class="modal fade" id="editProductModal" tabindex="-1" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-    	    	
-	      <div class="modal-header">
-	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	        <h4 class="modal-title"><i class="fa fa-edit"></i>Edit le Product</h4>
-	      </div>
-	      <div class="modal-body" style="max-height:450px; overflow:auto;">
+	<div class="modal-dialog">
+		<div class="modal-content">
 
-	      	<div class="div-loading">
-	      		<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
-						<span class="sr-only">Loading...</span>
-	      	</div>
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title"><i class="fa fa-edit"></i>Edit le Product</h4>
+			</div>
+			<div class="modal-body" style="max-height:450px; overflow:auto;">
 
-	      	<div class="div-result">
+				<div class="div-loading">
+					<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+					<span class="sr-only">Loading...</span>
+				</div>
 
-				  <!-- Nav tabs -->
-				  <ul class="nav nav-tabs" role="tablist">
-				    <li role="presentation" class="active"><a href="#photo" aria-controls="home" role="tab" data-toggle="tab">Photo</a></li>
-				    <li role="presentation"><a href="#productInfo" aria-controls="profile" role="tab" data-toggle="tab">Info Product</a></li>    
-				  </ul>
+				<div class="div-result">
 
-				  <!-- Tab panes -->
-				  <div class="tab-content">
+					<!-- Nav tabs -->
+					<ul class="nav nav-tabs" role="tablist">
+						<li role="presentation" class="active"><a href="#photo" aria-controls="home" role="tab" data-toggle="tab">Photo</a></li>
+						<li role="presentation"><a href="#productInfo" aria-controls="profile" role="tab" data-toggle="tab">Info Product</a></li>
+					</ul>
 
-				  	
-				    <div role="tabpanel" class="tab-pane active" id="photo">
-				    	<form action="php_action/editProductImage.php" method="POST" id="updateProductImageForm" class="form-horizontal" enctype="multipart/form-data">
+					<!-- Tab panes -->
+					<div class="tab-content">
 
-				    	<br />
-				    	<div id="edit-productPhoto-messages"></div>
 
-				    	<div class="form-group">
-			        	<label for="editProductImage" class="col-sm-3 control-label">Image Product: </label>
-			        	<label class="col-sm-1 control-label">: </label>
-						    <div class="col-sm-8">							    				   
-						      <img src="" id="getProductImage" class="thumbnail" style="width:250px; height:250px;" />
-						    </div>
-			        </div> <!-- /form-group-->	     	           	       
-				    	
-			      	<div class="form-group">
-			        	<label for="editProductImage" class="col-sm-3 control-label">Select Photo: </label>
-			        	<label class="col-sm-1 control-label">: </label>
-						    <div class="col-sm-8">
-							    <!-- the avatar markup -->
-									<div id="kv-avatar-errors-1" class="center-block" style="display:none;"></div>							
-							    <div class="kv-avatar center-block">					        
-							        <input type="file" class="form-control" id="editProductImage" placeholder="Nom du Product" name="editProductImage" class="file-loading" style="width:auto;"/>
-							    </div>
-						      
-						    </div>
-			        </div> <!-- /form-group-->	     	           	       
+						<div role="tabpanel" class="tab-pane active" id="photo">
+							<form action="php_action/editProductImage.php" method="POST" id="updateProductImageForm" class="form-horizontal" enctype="multipart/form-data">
 
-			        <div class="modal-footer editProductPhotoFooter">
-				        <button type="button" class="btn btn-default" data-dismiss="modal"> <i class="glyphicon glyphicon-remove-sign"></i> Close</button>
-				        
-				        <!-- <button type="submit" class="btn btn-success" id="editProductImageBtn" data-loading-text="Loading..."> <i class="glyphicon glyphicon-ok-sign"></i> Save Changes</button> -->
-				      </div>
-				      <!-- /modal-footer -->
-				      </form>
-				      <!-- /form -->
-				    </div>
-				    <!-- product image -->
-				    <div role="tabpanel" class="tab-pane" id="productInfo">
-				    	<form class="form-horizontal" id="editProductForm" action="php_action/editProduct.php" method="POST">				    
-				    	<br />
+								<br />
+								<div id="edit-productPhoto-messages"></div>
 
-				    	<div id="edit-product-messages"></div>
+								<div class="form-group">
+									<label for="editProductImage" class="col-sm-3 control-label">Image Product: </label>
+									<label class="col-sm-1 control-label">: </label>
+									<div class="col-sm-8">
+										<img src="" id="getProductImage" class="thumbnail" style="width:250px; height:250px;" />
+									</div>
+								</div> <!-- /form-group-->
 
-				    	<div class="form-group">
-			        	<label for="editProductName" class="col-sm-3 control-label">Nom du Product: </label>
-			        	<label class="col-sm-1 control-label">: </label>
-						    <div class="col-sm-8">
-						      <input type="text" class="form-control" id="editProductName" placeholder="Nom du Product" name="editProductName" autocomplete="off">
-						    </div>
-			        </div> <!-- /form-group-->	    
+								<div class="form-group">
+									<label for="editProductImage" class="col-sm-3 control-label">Select Photo: </label>
+									<label class="col-sm-1 control-label">: </label>
+									<div class="col-sm-8">
+										<!-- the avatar markup -->
+										<div id="kv-avatar-errors-1" class="center-block" style="display:none;"></div>
+										<div class="kv-avatar center-block">
+											<input type="file" class="form-control" id="editProductImage" placeholder="Nom du Product" name="editProductImage" class="file-loading" style="width:auto;" />
+										</div>
 
-			        <div class="form-group">
-			        	<label for="editbarCode" class="col-sm-3 control-label">Code barre: </label>
-			        	<label class="col-sm-1 control-label">: </label>
-						    <div class="col-sm-8">
-						      <input type="text" class="form-control" id="editbarCode" placeholder="Code barre" name="editbarCode" autocomplete="off">
-						    </div>
-			        </div> <!-- /form-group-->	 
+									</div>
+								</div> <!-- /form-group-->
 
-			        <div class="form-group">
-			        	<label for="editQuantity" class="col-sm-3 control-label">Quantité: </label>
-			        	<label class="col-sm-1 control-label">: </label>
-						    <div class="col-sm-8">
-						      <input type="text" class="form-control" id="editQuantity" placeholder="Quantité" name="editQuantity" autocomplete="off">
-						    </div>
-			        </div> <!-- /form-group-->	        	 
+								<div class="modal-footer editProductPhotoFooter">
+									<button type="button" class="btn btn-default" data-dismiss="modal"> <i class="glyphicon glyphicon-remove-sign"></i> Close</button>
 
-			        <div class="form-group">
-			        	<label for="editRate" class="col-sm-3 control-label">Pourcentage: </label>
-			        	<label class="col-sm-1 control-label">: </label>
-						    <div class="col-sm-8">
-						      <input type="text" class="form-control" id="editRate" placeholder="Pourcentage" name="editRate" autocomplete="off">
-						    </div>
-			        </div> <!-- /form-group-->	     	        
+									<!-- <button type="submit" class="btn btn-success" id="editProductImageBtn" data-loading-text="Loading..."> <i class="glyphicon glyphicon-ok-sign"></i> Save Changes</button> -->
+								</div>
+								<!-- /modal-footer -->
+							</form>
+							<!-- /form -->
+						</div>
+						<!-- product image -->
+						<div role="tabpanel" class="tab-pane" id="productInfo">
+							<form class="form-horizontal" id="editProductForm" action="php_action/editProduct.php" method="POST">
+								<br />
 
-			        <div class="form-group">
-			        	<label for="editBrandName" class="col-sm-3 control-label"><?php echo tr("Brand")?>: </label>
-			        	<label class="col-sm-1 control-label">: </label>
-						    <div class="col-sm-8">
-						      <select class="form-control" id="editBrandName" name="editBrandName">
-						      	<option value="">~~Select~~</option>
-						      	<?php 
-						      	$sql = "SELECT brand_id, brand_name, brand_active, brand_status FROM brands WHERE brand_status = 1 AND brand_active = 1 ORDER BY  brand_name ASC";
-										$result = $connect->query($sql);
+								<div id="edit-product-messages"></div>
 
-										while($row = $result->fetch_array()) {
-											echo "<option value='".$row[0]."'>".$row[1]."</option>";
-										} // while
-										
-						      	?>
-						      </select>
-						    </div>
-			        </div> <!-- /form-group-->	
+								<div class="form-group">
+									<label for="editProductName" class="col-sm-3 control-label">Nom du Product: </label>
+									<label class="col-sm-1 control-label">: </label>
+									<div class="col-sm-8">
+										<input type="text" class="form-control" id="editProductName" placeholder="Nom du Product" name="editProductName" autocomplete="off">
+									</div>
+								</div> <!-- /form-group-->
 
-			        <div class="form-group">
-			        	<label for="editCategoryName" class="col-sm-3 control-label">Nom de Category: </label>
-			        	<label class="col-sm-1 control-label">: </label>
-						    <div class="col-sm-8">
-						      <select type="text" class="form-control" id="editCategoryName" name="editCategoryName" >
-						      	<option value="">~~Select~~</option>
-						      	<?php 
-						      	$sql = "SELECT categories_id, categories_name, categories_active, categories_status FROM categories WHERE categories_status = 1 AND categories_active = 1 ORDER BY  categories_name ASC";
-										$result = $connect->query($sql);
+								<div class="form-group">
+									<label for="editbarCode" class="col-sm-3 control-label">Code barre: </label>
+									<label class="col-sm-1 control-label">: </label>
+									<div class="col-sm-8">
+										<input type="text" class="form-control" id="editbarCode" placeholder="Code barre" name="editbarCode" autocomplete="off">
+									</div>
+								</div> <!-- /form-group-->
 
-										while($row = $result->fetch_array()) {
-											echo "<option value='".$row[0]."'>".$row[1]."</option>";
-										} // while
-										
-						      	?>
-						      </select>
-						    </div>
-			        </div> <!-- /form-group-->					        	         	       
+								<div class="form-group">
+									<label for="editQuantity" class="col-sm-3 control-label">Quantité: </label>
+									<label class="col-sm-1 control-label">: </label>
+									<div class="col-sm-8">
+										<input type="text" class="form-control" id="editQuantity" placeholder="Quantité" name="editQuantity" autocomplete="off">
+									</div>
+								</div> <!-- /form-group-->
 
-			        <div class="form-group">
-			        	<label for="editProductStatus" class="col-sm-3 control-label">Statut: </label>
-			        	<label class="col-sm-1 control-label">: </label>
-						    <div class="col-sm-8">
-						      <select class="form-control" id="editProductStatus" name="editProductStatus">
-						      	<option value="">~~Select~~</option>
-						      	<option value="1">Available</option>
-						      	<option value="2">InAvailable</option>
-						      </select>
-						    </div>
-			        </div> <!-- /form-group-->	         	        
+								<div class="form-group">
+									<label for="editRate" class="col-sm-3 control-label">Pourcentage: </label>
+									<label class="col-sm-1 control-label">: </label>
+									<div class="col-sm-8">
+										<input type="text" class="form-control" id="editRate" placeholder="Pourcentage" name="editRate" autocomplete="off">
+									</div>
+								</div> <!-- /form-group-->
 
-			        <div class="modal-footer editProductFooter">
-				        <button type="button" class="btn btn-default" data-dismiss="modal"> <i class="glyphicon glyphicon-remove-sign"></i> Close</button>
-				        
-				        <button type="submit" class="btn btn-success" id="editProductBtn" data-loading-text="Loading..."> <i class="glyphicon glyphicon-ok-sign"></i> Enregistrer les modifications</button>
-				      </div> <!-- /modal-footer -->				     
-			        </form> <!-- /.form -->				     	
-				    </div>    
-				    <!-- /product info -->
-				  </div>
+								<div class="form-group">
+									<label for="editBrandName" class="col-sm-3 control-label"><?php echo tr("Brand") ?>: </label>
+									<label class="col-sm-1 control-label">: </label>
+									<div class="col-sm-8">
+										<select class="form-control" id="editBrandName" name="editBrandName">
+											<option value="">~~Select~~</option>
+											<?php
+											$sql = "SELECT brand_id, brand_name, brand_active, brand_status FROM brands WHERE brand_status = 1 AND brand_active = 1 ORDER BY  brand_name ASC";
+											$result = $connect->query($sql);
+
+											while ($row = $result->fetch_array()) {
+												echo "<option value='" . $row[0] . "'>" . $row[1] . "</option>";
+											} // while
+
+											?>
+										</select>
+									</div>
+								</div> <!-- /form-group-->
+
+								<div class="form-group">
+									<label for="editCategoryName" class="col-sm-3 control-label">Nom de Category: </label>
+									<label class="col-sm-1 control-label">: </label>
+									<div class="col-sm-8">
+										<select type="text" class="form-control" id="editCategoryName" name="editCategoryName">
+											<option value="">~~Select~~</option>
+											<?php
+											$sql = "SELECT categories_id, categories_name, categories_active, categories_status FROM categories WHERE categories_status = 1 AND categories_active = 1 ORDER BY  categories_name ASC";
+											$result = $connect->query($sql);
+
+											while ($row = $result->fetch_array()) {
+												echo "<option value='" . $row[0] . "'>" . $row[1] . "</option>";
+											} // while
+
+											?>
+										</select>
+									</div>
+								</div> <!-- /form-group-->
+
+								<div class="form-group">
+									<label for="editProductStatus" class="col-sm-3 control-label">Statut: </label>
+									<label class="col-sm-1 control-label">: </label>
+									<div class="col-sm-8">
+										<select class="form-control" id="editProductStatus" name="editProductStatus">
+											<option value="">~~Select~~</option>
+											<option value="1">Available</option>
+											<option value="2">InAvailable</option>
+										</select>
+									</div>
+								</div> <!-- /form-group-->
+
+								<div class="modal-footer editProductFooter">
+									<button type="button" class="btn btn-default" data-dismiss="modal"> <i class="glyphicon glyphicon-remove-sign"></i> Close</button>
+
+									<button type="submit" class="btn btn-success" id="editProductBtn" data-loading-text="Loading..."> <i class="glyphicon glyphicon-ok-sign"></i> Enregistrer les modifications</button>
+								</div> <!-- /modal-footer -->
+							</form> <!-- /.form -->
+						</div>
+						<!-- /product info -->
+					</div>
 
 				</div>
-	      	
-	      </div> <!-- /modal-body -->
-	      	      
-     	
-    </div>
-    <!-- /modal-content -->
-  </div>
-  <!-- /modal-dailog -->
+
+			</div> <!-- /modal-body -->
+
+
+		</div>
+		<!-- /modal-content -->
+	</div>
+	<!-- /modal-dailog -->
 </div>
 <!-- /categories brand -->
 
 <!-- categories brand -->
 <div class="modal fade" tabindex="-1" role="dialog" id="removeProductModal">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title"><i class="glyphicon glyphicon-trash"></i> remove un Product</h4>
-      </div>
-      <div class="modal-body">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title"><i class="glyphicon glyphicon-trash"></i> remove un Product</h4>
+			</div>
+			<div class="modal-body">
 
-      	<div class="removeProductMessages"></div>
+				<div class="removeProductMessages"></div>
 
-        <p>Voulez vous vraiment remove?</p>
-      </div>
-      <div class="modal-footer removeProductFooter">
-        <button type="button" class="btn btn-default" data-dismiss="modal"> <i class="glyphicon glyphicon-remove-sign"></i> Close</button>
-        <button type="button" class="btn btn-primary" id="removeProductBtn" data-loading-text="Loading..."> <i class="glyphicon glyphicon-ok-sign"></i> Enregistrer les modifications</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
+				<p>Voulez vous vraiment remove?</p>
+			</div>
+			<div class="modal-footer removeProductFooter">
+				<button type="button" class="btn btn-default" data-dismiss="modal"> <i class="glyphicon glyphicon-remove-sign"></i> Close</button>
+				<button type="button" class="btn btn-primary" id="removeProductBtn" data-loading-text="Loading..."> <i class="glyphicon glyphicon-ok-sign"></i> Enregistrer les modifications</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 <!-- /categories brand -->
 
+<!-- Export to excel -->
+<script>
+	var wb;
+	var wbout;
 
+	function s2ab(s) {
+		var buf = new ArrayBuffer(s.length);
+		var view = new Uint8Array(buf);
+		for (var i = 0; i < s.length; i++) {
+			view[i] = s.charCodeAt(i) & 0xFF;
+		}
+		return buf;
+	}
+	$("#button-a").click(function() {
+		$('#manageProductTable').DataTable({
+			destroy: true,
+			"bPaginate": false
+		});
+		var tabs = document.getElementById('manageProductTable');
+		for (i = 0; i < tabs.rows.length; i++) {
+			tabs.rows[i].deleteCell(7);
+			tabs.rows[i].deleteCell(7);
+			tabs.rows[i].deleteCell(0);
+		}
+		wb = XLSX.utils.table_to_book(document.getElementById('manageProductTable'), {
+			sheet: "Sheet JS"
+		});
+		wbout = XLSX.write(wb, {
+			bookType: 'xlsx',
+			bookSST: true,
+			type: 'binary'
+		});
+		saveAs(new Blob([s2ab(wbout)], {
+			type: "application/octet-stream"
+		}), 'ListOfLowStock.xlsx');
+		setTimeout(function() {
+			document.location.reload(true)
+		}, 10);
+	});
+</script>
 <script src="custom/js/lowStock.js"></script>
-
 <?php require_once 'includes/footer.php'; ?>
