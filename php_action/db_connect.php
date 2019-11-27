@@ -1,10 +1,10 @@
 <?php 	
 
-$host = 'ec2-54-246-121-32.eu-west-1.compute.amazonaws.com';
-$port = 5432;
-$username = "mokpbeftzvdfvj";
-$password = "2109ff14725e43d77daf4a056fcfe7010c80984e391af2d15f9d1bb03cac80f2";
-$dbname = "d65rlbivfarv6a";
+$host = 'w1kr9ijlozl9l79i.chr7pe7iynqr.eu-west-1.rds.amazonaws.com';
+$port = 3306;
+$username = "h5r8upi4bs3lpgf8";
+$password = "qlfnr47pvpus6vj2";
+$dbname = "uye9fh6dtqylojq2";
   $connect = new mysqli($host, $username, $password, $dbname, $port);
 //$connect = new mysqli($host, $username, $password, $dbname);
 // check connection
